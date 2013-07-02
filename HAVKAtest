@@ -1,0 +1,27 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class HAVKATest {
+    
+    @Test
+    public void testSetGet() {
+        String exp = "Japan";
+        HAVKA KYKYRUZA = new HAVKA();
+        KYKYRUZA.setName(exp);
+        String res = KYKYRUZA.getName();
+        assertEquals(exp, res); 
+    }
+    @Test
+    public void testNullSetGet() {
+        String exp = null;
+        try {
+        HAVKA KYKYRUZA = new HAVKA();
+        KYKYRUZA.setName(exp);
+        String res = KYKYRUZA.getName();
+        assertEquals(exp, res); 
+        } 
+        catch (NullPointerException e) {
+            System.out.println("NullPointerException 2");
+        }     
+    }
+}
