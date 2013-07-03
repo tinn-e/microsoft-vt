@@ -1,0 +1,7 @@
+public void TestPack() {
+object dish = "Фуагра, Цезарь"
+ServletName.AddTo(dish)
+Object result = ServletName.Put(id)
+object exp = dish
+assertEquals(exp, result);
+}
