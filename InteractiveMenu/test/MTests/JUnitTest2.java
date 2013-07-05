@@ -4,7 +4,7 @@
  */
 package MTests;
 
-import Havka;
+import ru.base.pack.*;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import org.junit.AfterClass;
@@ -31,9 +31,9 @@ public class JUnitTest2 {
     public void TestAddInPack () {
         Hashtable NewTable1 = new Hashtable();
         Havka dish = new Havka();
-        String expResult = dish.name;
+        String expResult = dish.getName();
         NewTable1.add(dish);
-        String result = NewTable1.get(dish);
+        String result = (String)NewTable1.get(dish);
         assertEquals(expResult, result); 
     }
     @Test
