@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="qq.Item" table="ITEMS">
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="prodTitle" column="prodTitle" type="string"/>
+      <property name="prodDesc" column="prodDesc" type="string"/>
+      <property name="prodCost" column="prodCost" type="int"/>
+   </class>
+</hibernate-mapping>
