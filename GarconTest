@@ -1,9 +1,0 @@
-@Test
-    public void testChooseTable() {
-        int numOfTable = 5;
-        Garcon instance = new Garcon();
-        instance.chooseTable(numOfTable);
-        int expResult = numOfTable;
-        int result = instance.getNumOfTable();
-        assertEquals(expResult,result);   
-    }
