@@ -6,8 +6,37 @@ public class Item {
     private String itemTitle;
     private String itemDesc;
     private int itemCost;
-    public String itemCategory;
+    private String itemCategory;
+    private int markOfUser = 0;
+    private int valueOfMarks = 0;
+    private double ratingOfItem = 0.0;
 
+    public void setMarkOfUser(int markOfUser) {
+        this.markOfUser = markOfUser;
+    }
+
+    public void setValueOfMarks(int valueOfMarks) {
+        this.valueOfMarks = valueOfMarks;
+    }
+
+    public void setRatingOfItem(double rating) {
+        this.ratingOfItem = rating;
+    }
+
+    public int getMarkOfUser() {
+        return markOfUser;
+    }
+
+    public int getValueOfMarks() {
+        return valueOfMarks;
+    }
+
+    public double getRatingOfItem() {
+        return ratingOfItem;
+    }
+    
+    
+    
     public Item() {
     }
 
@@ -73,13 +102,7 @@ public class Item {
     public String printItemCat(Item item){
         return "<b>Категория:<b>"+ item.getItemCategory();
     }
-//    =====================================================================
-//    || Олег, надо написать метод который печатает категорию товара
-//    || Как на примере методов выше 
-//    =====================================================================
-//    public String printItemCategory(Item item) {
-//         
-//    }
+
 
     public String toStringItem(Item item) {
         return printItemTitle(item) + "<br>" + printItemDesc(item) + "<br>" + printItemCost(item)
@@ -102,4 +125,7 @@ public class Item {
         }
         return false;
     }
+    
+    
+
 }
