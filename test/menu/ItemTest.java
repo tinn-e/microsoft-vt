@@ -110,9 +110,9 @@ public class ItemTest {
     @Test
      public void testSetMark(){
         Item instanse = new Item("pirog", "sladkiy", 400, "desert");
-        instanse.setMark(instanse, 5);
-        instanse.setMark(instanse,5);
-        instanse.setMark(instanse,5);
+        instanse.setMark(5);
+        instanse.setMark(5);
+        instanse.setMark(5);
         int expResult = 15;
         int result = instanse.getMarkOfUser();
         assertEquals(expResult,result);

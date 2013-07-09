@@ -126,11 +126,16 @@ public class Item {
         return false;
     }
     
-    public void setMark(Item item, int mark){
-        item.setMarkOfUser(this.markOfUser+=mark); 
-        item.setValueOfMarks(item.getValueOfMarks()+1);
-        item.setRatingOfItem((double)item.getMarkOfUser()/(double)item.getValueOfMarks());
-    }
+//    public void setMark(Item item, int mark){
+//        item.setMarkOfUser(this.markOfUser+=mark); 
+//        item.setValueOfMarks(item.getValueOfMarks()+1);
+//        item.setRatingOfItem((double)item.getMarkOfUser()/(double)item.getValueOfMarks());
+//    }
 
+     public void setMark(int mark){
+        this.setMarkOfUser(this.markOfUser+=mark); 
+        this.setValueOfMarks(this.getValueOfMarks()+1);
+        this.setRatingOfItem((double)this.getMarkOfUser()/(double)this.getValueOfMarks());
+    }
 
 }
