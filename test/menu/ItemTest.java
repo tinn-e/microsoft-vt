@@ -56,7 +56,7 @@ public class ItemTest {
         assertEquals(expResult, result);
     }
     @Test
-    public void testSetAndGetItemCat(){
+    public void testSetAndGetItemCategory(){
         Item instance = new Item();
         String category = "Горячее";
         instance.setItemCategory(category);
@@ -65,46 +65,38 @@ public class ItemTest {
         assertEquals(expResult, result);
     }
     @Test
-        public void testPrintItemCat(){
-        Item instance = new Item();
-        String category = "Горячее блюдо, пальчики оближешь";
-        instance.setItemCategory(category);
-        String expResult = "Горячее блюдо, пальчики оближешь";
-        String result = instance.getItemCategory();
+        public void testPrintItemCategory(){
+        Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
+        String expResult = "<b>Категория:<b> Горячее";
+        String result = instance.printItemCategory(instance);
         assertEquals(expResult, result);
     }
     @Test
         public void testPrintItemTitle(){
-        Item instance = new Item();
-        String title = "Картоха";
-        instance.setItemTitle(title);
-        String expResult = "Картоха";
-        String result = instance.printItemTitle();
+        Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
+        String expResult = "<b>Название:</b> Картошка жареная";
+        String result = instance.printItemTitle(instance);
         assertEquals(expResult, result);
     }
     @Test
         public void testPrintItemDesc(){
-        Item instance = new Item("Картоха", "Пюре", 100, "Горячее");
-        String expResult = "<b>Описание:</b> Пюре";
-        String result = instance.getItemDesc();
+        Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
+        String expResult = "<b>Описание:</b> Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами";
+        String result = instance.printItemDesc(instance);
         assertEquals(expResult, result);
     }
     @Test
         public void testPrintItemCost(){
-        Item instance = new Item();
-        int cost = 100;
-        instance.setItemCost(cost);
-        int expResult = 100;
-        int result = instance.printItemCost();
+        Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качестваи", 200, "Горячее");
+        String expResult = "<b>Цена:</b> 200 руб";
+        String result = instance.printItemCost(instance);
         assertEquals(expResult, result);
     }
     @Test
         public void testToStringItem(){
-        Item instance = new Item();
-        String item = "Картоха, Пюре, 100, Горячее";
-        instance.setItemDesc(item);
-        String expResult = "Картоха, Пюре, 100, Горячее";
-        String result = instance.getItem();
+        Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
+        String expResult = "<b>Название:</b> Картошка жареная<br><b>Описание:</b> Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами<br><b>Цена:</b> 200 руб<br><b>Категория:<b> Горячее";
+        String result = instance.toStringItem(instance);
         assertEquals(expResult, result);
     }
 }
