@@ -1,73 +1,131 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package Menu;
+package menu;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Elka
- */
 public class ItemTest {
     
     public ItemTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
+//    =====================================================================
+//    || Во все тесты надо добавить к объектам поле itemCategory
+//    || Пример: 
+//    || Было:  obj.AddToListPack(title, desc, cost);
+//    || Стало:  obj.AddToListPack(title, desc, cost, cat);
+//    || И все протестировать после изменений
+//    =====================================================================
     
-    @AfterClass
-    public static void tearDownClass() {
+@Test
+    public void testSetAndGetItemID() {
+        Item instance = new Item();
+        int id = 100;
+        instance.setItemID(id);
+        int expResult = 100;
+        int result = instance.getItemID();
+        assertEquals(expResult, result);
     }
 
-    /**
-     * Test of getName method, of class Item.
-     */
     @Test
-    public void testGetName() {
-        System.out.println("getName");
+    public void testSetAndGetItemTitle() {
         Item instance = new Item();
-        String expResult = "sup";
-        instance.setName("sup");
-        String result = instance.getName();
+        String title = "Борщ";
+        instance.setItemTitle(title);
+        String expResult = "Борщ";
+        String result = instance.getItemTitle();
         assertEquals(expResult, result);
-      //  fail("Test1.");
     }
+
+    @Test
+    public void testSetAndGetItemDesc() {
+        Item instance = new Item();
+        String desc = "Свекла, овощи другие, мясо";
+        instance.setItemDesc(desc);
+        String expResult = "Свекла, овощи другие, мясо";
+        String result = instance.getItemDesc();
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testSetAndGetItemCost() {
+        Item instance = new Item();
+        int cost = 1000;
+        instance.setItemCost(cost);
+        int expResult = 1000;
+        int result = instance.getItemCost();
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSetAndGetItemCat(){
+        Item instance = new Item();
+        String category = "Горячее";
+        instance.setItemCategory(category);
+        String expResult = "Горячее";
+        String result = instance.getItemCategory();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemCat(){
+        Item instance = new Item();
+        String category = "Горячее блюдо, пальчики оближешь";
+        instance.setItemCategory(category);
+        String expResult = "Горячее блюдо, пальчики оближешь";
+        String result = instance.getItemCategory();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemTitle(){
+        Item instance = new Item();
+        String title = "Картоха";
+        instance.setItemTitle(title);
+        String expResult = "Картоха";
+        String result = instance.printItemTitle();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemDesc(){
+        Item instance = new Item("Картоха", "Пюре", 100, "Горячее");
+        String expResult = "<b>Описание:</b> Пюре";
+        String result = instance.getItemDesc();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemCost(){
+        Item instance = new Item();
+        int cost = 100;
+        instance.setItemCost(cost);
+        int expResult = 100;
+        int result = instance.printItemCost();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testToStringItem(){
+        Item instance = new Item();
+        String item = "Картоха, Пюре, 100, Горячее";
+        instance.setItemDesc(item);
+        String expResult = "Картоха, Пюре, 100, Горячее";
+        String result = instance.getItem();
+        assertEquals(expResult, result);
+    }
+    @Test
+     public void testSetMark(){
+        Item instanse = new Item("pirog", "sladkiy", 400, "desert");
+        instanse.setMark(instanse, 5);
+        instanse.setMark(instanse,5);
+//        int expResult = 10;
+//        int result = instanse.getMarkOfUser();
+//        assertEquals(expResult,result);
+//        int expValueOfMarks = 2;
+//        instanse.setValueOfMarks(instanse.getValueOfMarks()+1);
+//        int resValueOfMarks = instanse.getValueOfMarks();
+//        assertEquals(expValueOfMarks,expValueOfMarks);
+        instanse.setRatingOfItem((double)instanse.getMarkOfUser()/(double)instanse.getValueOfMarks());
+        Double expResult = 5.0;
+        Double result = instanse.getRatingOfItem();
+        assertEquals(expResult,result);
+            }
   
-
-     /**
-     * Test of getConsistance method, of class Item.
-     */
-    @Test
-    public void testGetConsistance() {
-        System.out.println("getConsistance");
-        Item instance = new Item();
-        String expResult = "yellow color";
-        instance.setConsistance("yellow color");
-        String result = instance.getConsistance();
-        assertEquals(expResult, result);
-        //fail("Test2.");
-    }
      
-   
-    /**
-     * Test of getCost method, of class Item.
-     */
-    @Test
-    public void testGetCost() {
-        System.out.println("getCost");
-        Item instance = new Item();
-        Double expResult = 150.50;
-        instance.setCost(150.50);
-        Double result = instance.getCost();
-        assertEquals(expResult, result);
-        //fail("Test3.");
-    }
-      
+    
+    
 }
