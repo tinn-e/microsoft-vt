@@ -1,4 +1,4 @@
-package menu;
+﻿package menu;
 
 import org.junit.Test;
 import java.util.ArrayList;
@@ -19,13 +19,7 @@ public class PackTest {
     public static void setUpClass() throws Exception {
     }
 
-//    =====================================================================
-//    || Кристин, надо добавить во все объекты поле категория
-//    || Пример: 
-//    || Было:  obj.AddToListPack(title, desc, cost);
-//    || Стало:  obj.AddToListPack(title, desc, cost, cat);
-//    || И все протестировать после изменений
-//    =====================================================================
+
     
     @Test
     public void testAddToListPack() {
@@ -33,14 +27,14 @@ public class PackTest {
         String title = "tea";
         String desc = "sweet";
         Integer cost = 200;
-
+        String cat = "Drink";
         Pack obj = new Pack();
-        obj.AddToListPack(title, desc, cost);
+        obj.AddToListPack(title, desc, cost,cat);
         System.out.println("Блюдо: " + (obj));
 
         try {
-            obj.AddToListPack(null, null, 0);
-            if (title == null || desc == null || cost == 0) {
+            obj.AddToListPack(null, null, 0,null);
+            if (title == null || desc == null || cost == 0 || cat==null) {
                 throw new Exception();
             }
 
@@ -81,7 +75,7 @@ public class PackTest {
             if (pack == null || pack.getListPack() == null) {
                 throw new Exception();
             }
-            pack.AddToListPack("cake", "tasty", 150);
+            pack.AddToListPack("cake", "tasty", 150, "Dessert");
             if (!pack.getListPack().isEmpty()) {
                 System.out.println("An item is in a bag!");
             }
@@ -96,15 +90,16 @@ public class PackTest {
 
     @Test
     public void testDeleteItemFromPack() {
-        Pack pack = new Pack();
+        Pack bag = new Pack();
         String name = "cake";
         String param = "tasty";
         int val = 150;
-        pack.AddToListPack(name, param, val);
-        System.out.println("In bag is " + pack.getListPack().get(0));
-        pack.DeleteItemFromPack((Item) pack.getListPack().get(0));
+        String category = "Dessert";
+        bag.AddToListPack(name, param, val,category);
+        System.out.println("In bag is " + bag.getListPack().get(0));
+        bag.DeleteItemFromPack((Item) bag.getListPack().get(0));
         boolean expResult = true;
-        boolean result = pack.getListPack().isEmpty();
+        boolean result = bag.getListPack().isEmpty();
         assertEquals(expResult, result);
     }
 
@@ -113,9 +108,9 @@ public class PackTest {
         Pack pack = new Pack();
         ArrayList<Item> list = new ArrayList<Item>();
         pack.setListPack(list);
-        pack.AddToListPack("cake", "sweet", 100);
-        pack.AddToListPack("cake", "sweet", 200);
-        pack.AddToListPack("cake", "sweet", 300);
+        pack.AddToListPack("cake", "sweet", 100,"Dessert");
+        pack.AddToListPack("cake", "sweet", 200,"Dessert");
+        pack.AddToListPack("cake", "sweet", 300,"Dessert");
         int expResult = 600;
         int result = pack.SummPack(list);
         assertEquals(expResult, result);
