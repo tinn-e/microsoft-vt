@@ -56,12 +56,55 @@ public class ItemTest {
         assertEquals(expResult, result);
     }
     @Test
-    public void testSetAndGetc(){
+    public void testSetAndGetItemCat(){
         Item instance = new Item();
         String category = "Горячее";
         instance.setItemCategory(category);
         String expResult = "Горячее";
         String result = instance.getItemCategory();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemCat(){
+        Item instance = new Item();
+        String category = "Горячее блюдо, пальчики оближешь";
+        instance.setItemCategory(category);
+        String expResult = "Горячее блюдо, пальчики оближешь";
+        String result = instance.getItemCategory();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemTitle(){
+        Item instance = new Item();
+        String title = "Картоха";
+        instance.setItemTitle(title);
+        String expResult = "Картоха";
+        String result = instance.printItemTitle();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemDesc(){
+        Item instance = new Item("Картоха", "Пюре", 100, "Горячее");
+        String expResult = "<b>Описание:</b> Пюре";
+        String result = instance.getItemDesc();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testPrintItemCost(){
+        Item instance = new Item();
+        int cost = 100;
+        instance.setItemCost(cost);
+        int expResult = 100;
+        int result = instance.printItemCost();
+        assertEquals(expResult, result);
+    }
+    @Test
+        public void testToStringItem(){
+        Item instance = new Item();
+        String item = "Картоха, Пюре, 100, Горячее";
+        instance.setItemDesc(item);
+        String expResult = "Картоха, Пюре, 100, Горячее";
+        String result = instance.getItem();
         assertEquals(expResult, result);
     }
 }

@@ -70,6 +70,9 @@ public class Item {
         return ("<b>Цена:</b> " + item.getItemCost() + " руб").toString();
     }
     
+    public String printItemCat(Item item){
+        return "<b>Категория:<b>"+ item.getItemCategory();
+    }
 //    =====================================================================
 //    || Олег, надо написать метод который печатает категорию товара
 //    || Как на примере методов выше 
@@ -79,7 +82,8 @@ public class Item {
 //    }
 
     public String toStringItem(Item item) {
-        return printItemTitle(item) + "<br>" + printItemDesc(item) + "<br>" + printItemCost(item);
+        return printItemTitle(item) + "<br>" + printItemDesc(item) + "<br>" + printItemCost(item)
+                + "<br>" + printItemCat(item);
     }
 
     public boolean equals(Item obj) {
