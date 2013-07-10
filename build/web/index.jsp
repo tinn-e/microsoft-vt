@@ -37,7 +37,7 @@
                 </tr>                
             </table>
         </form>
-        <a href="http://localhost:8080/HB_2.0/DemoListPack">Посмотреть корзину</a> 
+        <a href="http://localhost:8080/microsoft-vt-master/DemoListPack">Посмотреть корзину</a> 
         
         <h2>Ваше меню:</h2>
         <%
@@ -51,24 +51,27 @@
             HibernateUtils hbUtils = new HibernateUtils();
             List<Item> listItems = hbUtils.getItemList();
             for (Item i : listItems) {
-                
+                out.println ("<div style=\"background:#2E7BCC; \">");
                 out.println("<br>" + i.toStringItem(i));
-                out.println("<br><a href=\"http://localhost:8080/HB_2.0/DemoAddPack?"
+                out.println("<br><a href=\"http://localhost:8080/microsoft-vt-master/DemoAddPack?"
                         + "&itemTitle=" + i.getItemTitle()
                         + "&itemDesc=" + i.getItemDesc()
                         + "&itemCost=" + i.getItemCost()
+                        + "&itemCost=" + i.getItemCategory()
                         + "\">Добавить в корзину</a> (Эта кнопка в меню для посетителей)<br> ");
 
-                out.println("<a href=\"http://localhost:8080/HB_2.0/DemoUpdate.jsp?"
+                out.println("<a href=\"http://localhost:8080/microsoft-vt-master/DemoUpdate.jsp?"
                         + "itemID=" + i.getItemID()
                         + "&itemTitle=" + i.getItemTitle()
                         + "&itemDesc=" + i.getItemDesc()
                         + "&itemCost=" + i.getItemCost()
+                        + "&itemCost=" + i.getItemCategory()
                         + "\">Редактировать</a> |  ");
                 
-                out.println("<a href=\"http://localhost:8080/HB_2.0/DemoDelete?"
+                out.println("<a href=\"http://localhost:8080/microsoft-vt-master/DemoDelete?"
                         + "itemID=" + i.getItemID()
                         + "\">Удалить</a> (Эти кнопки для администрации ресторана)<br><br><hr>");
+                out.println ("</div>");
             }
 %>
     </body>

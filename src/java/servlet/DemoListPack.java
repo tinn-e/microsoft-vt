@@ -2,11 +2,14 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import menu.HibernateUtils;
 import menu.Item;
 import menu.Pack;
@@ -23,6 +26,17 @@ public class DemoListPack extends HttpServlet {
             System.err.println("Failed to create sessionFactory object." + ex);
             throw new ExceptionInInitializerError(ex);
         }
+HttpSession session = request.getSession(true);
+
+ArrayList<Item> cart = (ArrayList)session.getValue("cart");
+            
+                // Если у пользователя нет корзины, создаем ее
+            if (cart == null) {
+                cart = new ArrayList();
+                session.putValue("cart", cart);
+            }
+
+
 
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -32,7 +46,13 @@ public class DemoListPack extends HttpServlet {
             out.println("<title>Servlet DemoListPack</title>");
             out.println("</head>");
             out.println("<body>");
-            
+            if (!cart.isEmpty()) {
+                for (Item i : cart) {
+                    out.println("<br>" + i.toStringItem(i) + "<br><br>");
+                }
+            } else {
+                out.println("<b> В данном разделе блюд нет </b>");
+            }
             out.println("<h2>Ваша корзина:</h2>");
             
             out.println("<br><a href=\"http://localhost:8080/HB_2.0/DemoClearPack\">"

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pack {
-    private int summ;
-    public ArrayList<Item> ListPack = new ArrayList<Item>();
+    private static int summ;
+    public static ArrayList<Item> ListPack = new ArrayList<Item>();
 
-    public void AddToListPack(String itemTitle, String itemDesc, int itemCost, String itemCategory) {
+    public static void AddToListPack(String itemTitle, String itemDesc, int itemCost, String itemCategory) {
         Item item = new Item(itemTitle, itemDesc, itemCost, itemCategory);
-        this.ListPack.add(item);
+        ListPack.add(item);
     }
 
     public ArrayList getListPack() {
@@ -17,22 +17,22 @@ public class Pack {
     }
 
     public void setListPack(ArrayList<Item> listPack) {
-        this.ListPack = listPack;
+        ListPack = listPack;
     }
 
-    public void ClearPack(List<Item> ListPack) {
+    public static void ClearPack(List<Item> ListPack) {
         ListPack.clear();
-        this.summ = 0;
+        summ = 0;
     }
 
     public void DeleteItemFromPack(Item item) {
-        this.ListPack.remove(item);
-        this.summ = summ - item.getItemCost();
+        ListPack.remove(item);
+        summ = summ - item.getItemCost();
     }
 
-    public  int SummPack(List<Item> ListPack) {
+    public static int SummPack(List<Item> ListPack) {
         for (menu.Item i : ListPack) {
-            this.summ += i.getItemCost();
+            summ += i.getItemCost();
         }
         return summ;
     }

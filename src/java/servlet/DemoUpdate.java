@@ -22,7 +22,7 @@ public class DemoUpdate extends HttpServlet {
             String itemTitle = request.getParameter("itemTitle");
             String itemDesc = request.getParameter("itemDesc");        
             String itemCost = request.getParameter("itemCost"); 
-        
+            String itemCategory = request.getParameter("itemCategory");         
         try {
             out.println("<html>");
             out.println("<head>");
@@ -34,7 +34,7 @@ public class DemoUpdate extends HttpServlet {
             int i_itemCost = Integer.parseInt(itemCost);
             int i_itemID = Integer.parseInt(itemID); 
             
-            out.println(hbUtils.updateItem(i_itemID, itemTitle, itemDesc, i_itemCost));
+            out.println(hbUtils.updateItem(i_itemID, itemTitle, itemDesc, i_itemCost, itemCategory));
             
             out.println("</body>");
             out.println("</html>");

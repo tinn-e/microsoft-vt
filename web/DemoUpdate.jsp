@@ -1,8 +1,3 @@
-<%-- 
-    Document   : DemoUpdate
-    Created on : 06.07.2013, 20:39:46
-    Author     : Admin
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,6 +16,7 @@
             String itemTitle = request.getParameter("itemTitle");
             String itemDesc = request.getParameter("itemDesc");        
             String itemCost = request.getParameter("itemCost"); 
+            String itemCategory = request.getParameter("itemCategory");
 
        %>
         <form action="DemoUpdate" method = "GET">
@@ -38,6 +34,10 @@
                 <tr>
                     <td> Цена: </td>
                     <td>  <input value ="<%= itemCost %>" type="text" name="itemCost">     
+                </tr>
+                <tr>
+                    <td> Цена: </td>
+                    <td>  <input value ="<%= itemCategory %>" type="text" name="itemCategory">     
                 </tr>
                 <tr> 
                     <td colspan="2"> <input type="submit" value="Редактировать">

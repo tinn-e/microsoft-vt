@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/menudb</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">tinne</property>
+    <property name="hibernate.connection.password"></property>
     <property name="connection.characterEncoding">UTF-8</property>
     <mapping resource="Item.hbm.xml"/>
   </session-factory>

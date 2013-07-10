@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import menu.Item;
 import menu.Pack;
 
@@ -20,17 +21,21 @@ public class DemoAddPack extends HttpServlet {
         String itemTitle = request.getParameter("itemTitle");
         String itemDesc = request.getParameter("itemDesc");
         Integer itemCost = Integer.parseInt(request.getParameter("itemCost"));
-
+        String itemCategory = request.getParameter("itemCategory");
+        Pack.AddToListPack(itemTitle, itemDesc, itemCost, itemCategory);
+        HttpSession session = request.getSession(true);      
+session.setAttribute("cart", Pack.ListPack);   
+response.sendRedirect("DemoListPack");
         try {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<br><a href=\"http://localhost:8080/HB_2.0/DemoClearPack\">"
+            out.println("<br><a href=\"http://localhost:8080/microsoft-vt-master/DemoClearPack\">"
                     + "Очистить корзину</a><br> ");
 
-            Pack.AddToListPack(itemTitle, itemDesc, itemCost);
+
             if (!Pack.ListPack.isEmpty()) {
                 for (Item i : Pack.ListPack) {
                     out.println("<br>" + i.toStringItem(i) + "<br><br>");

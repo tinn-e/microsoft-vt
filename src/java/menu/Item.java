@@ -6,37 +6,8 @@ public class Item {
     private String itemTitle;
     private String itemDesc;
     private int itemCost;
-    private String itemCategory;
-    private int markOfUser = 0;
-    private int valueOfMarks = 0;
-    private double ratingOfItem = 0.0;
+    public String itemCategory;
 
-    public void setMarkOfUser(int markOfUser) {
-        this.markOfUser = markOfUser;
-    }
-
-    public void setValueOfMarks(int valueOfMarks) {
-        this.valueOfMarks = valueOfMarks;
-    }
-
-    public void setRatingOfItem(double rating) {
-        this.ratingOfItem = rating;
-    }
-
-    public int getMarkOfUser() {
-        return markOfUser;
-    }
-
-    public int getValueOfMarks() {
-        return valueOfMarks;
-    }
-
-    public double getRatingOfItem() {
-        return ratingOfItem;
-    }
-    
-    
-    
     public Item() {
     }
 
@@ -99,14 +70,20 @@ public class Item {
         return ("<b>Цена:</b> " + item.getItemCost() + " руб").toString();
     }
     
-    public String printItemCat(Item item){
-        return "<b>Категория:<b>"+ item.getItemCategory();
+    public String printItemCategory(Item item){
+        return "<b>Категория:<b> " + item.getItemCategory();
     }
-
+//    =====================================================================
+//    || Олег, надо написать метод который печатает категорию товара
+//    || Как на примере методов выше 
+//    =====================================================================
+//    public String printItemCategory(Item item) {
+//         
+//    }
 
     public String toStringItem(Item item) {
-        return printItemTitle(item) + "<br>" + printItemDesc(item) + "<br>" + printItemCost(item)
-                + "<br>" + printItemCat(item);
+        return printItemTitle(item) + "<br>" + printItemDesc(item) + "<br>" + printItemCost(item) 
+                + "<br>" + printItemCategory(item);
     }
 
     public boolean equals(Item obj) {
@@ -125,17 +102,4 @@ public class Item {
         }
         return false;
     }
-    
-//    public void setMark(Item item, int mark){
-//        item.setMarkOfUser(this.markOfUser+=mark); 
-//        item.setValueOfMarks(item.getValueOfMarks()+1);
-//        item.setRatingOfItem((double)item.getMarkOfUser()/(double)item.getValueOfMarks());
-//    }
-
-     public void setMark(int mark){
-        this.setMarkOfUser(this.markOfUser+=mark); 
-        this.setValueOfMarks(this.getValueOfMarks()+1);
-        this.setRatingOfItem((double)this.getMarkOfUser()/(double)this.getValueOfMarks());
-    }
-
 }
