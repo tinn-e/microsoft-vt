@@ -99,4 +99,25 @@ public class ItemTest {
         String result = instance.toStringItem(instance);
         assertEquals(expResult, result);
     }
+    
+    @Test
+     public void testSetMark(){
+        Item instanse = new Item("pirog", "sladkiy", 400, "desert");
+        instanse.setMark(5);
+        instanse.setMark(5);
+        instanse.setMark(5);
+        int expResult = 15;
+        int result = instanse.getMarkOfUser();
+        assertEquals(expResult,result);
+        
+        int expValueOfMarks = 3;
+        int resValueOfMarks = instanse.getValueOfMarks();
+        assertEquals(expValueOfMarks,expValueOfMarks);
+        
+        instanse.setRatingOfItem((double)instanse.getMarkOfUser()/(double)instanse.getValueOfMarks());
+        Double expResultRate = 5.0;
+        Double resultRate = instanse.getRatingOfItem();
+        assertEquals(expResultRate,resultRate);
+            }
+
 }
