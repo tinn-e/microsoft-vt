@@ -7,15 +7,7 @@ public class ItemTest {
     
     public ItemTest() {
     }
-    
-//    =====================================================================
-//    || Во все тесты надо добавить к объектам поле itemCategory
-//    || Пример: 
-//    || Было:  obj.AddToListPack(title, desc, cost);
-//    || Стало:  obj.AddToListPack(title, desc, cost, cat);
-//    || И все протестировать после изменений
-//    =====================================================================
-    
+
 @Test
     public void testSetAndGetItemID() {
         Item instance = new Item();

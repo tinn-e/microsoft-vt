@@ -101,13 +101,6 @@ public class Item {
     public String printItemCategory(Item item){
         return "<b>Категория:<b> " + item.getItemCategory();
     }
-//    =====================================================================
-//    || Олег, надо написать метод который печатает категорию товара
-//    || Как на примере методов выше 
-//    =====================================================================
-//    public String printItemCategory(Item item) {
-//         
-//    }
 
     public String toStringItem(Item item) {
         return printItemTitle(item) + "<br>" + printItemDesc(item) + "<br>" + printItemCost(item) 
