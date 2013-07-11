@@ -5,10 +5,9 @@
 
 <hibernate-mapping>
    <class name="menu.Category" table="CATEGORIES">
-      <id name="catID" type="int" column="id">
+      <id name="categoryID" type="int" column="id">
          <generator class="native"/>
-      </id>
-      <property name="categoryID" column="categoryID" type="int"/>
+      </id>     
       <property name="categoryName" column="categoryName" type="string"/>
    </class>
-</hibernate-mapping>
+</hibernate-mapping>g>
