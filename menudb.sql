@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `items` (
 --
 
 INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
-(74, 'qqq', 'www', 111, 'Закуски'),
-(75, 'борщ', 'вкусный', 444, 'Первые блюда');
+(1, 'qqq', 'www', 111, 'Закуски'),
+(2, 'борщ', 'вкусный', 444, 'Первые блюда');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
