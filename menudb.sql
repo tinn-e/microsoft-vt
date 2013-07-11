@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categoryName`) VALUES
-(1, 'Закуски'),
+
 (2, 'Салаты'),
 (3, 'Первые блюда'),
 (4, 'Вторые блюда'),
