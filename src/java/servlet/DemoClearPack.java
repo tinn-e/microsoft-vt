@@ -29,9 +29,9 @@ public class DemoClearPack extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-            
-            Pack.ClearPack(Pack.ListPack);
-          // Pack.ClearSummPack();
+//            
+//            Pack.ClearPack(Pack.ListPack);
+//          // Pack.ClearSummPack();
             
             out.println("</body>");
             out.println("</html>");

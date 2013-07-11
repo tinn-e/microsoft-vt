@@ -55,17 +55,17 @@ ArrayList<Item> cart = (ArrayList)session.getValue("cart");
             }
             out.println("<h2>Ваша корзина:</h2>");
             
-            out.println("<br><a href=\"http://localhost:8080/HB_2.0/DemoClearPack\">"
-                    + "Очистить корзину</a><br> ");
-            
-            if (!menu.Pack.ListPack.isEmpty()) {
-                for (Item i : menu.Pack.ListPack) {
-                    out.println("<br>" + i.toStringItem(i) + "<br><br>");
-                }
-            } else {
-                out.println("<b> В данном разделе блюд нет </b>");
-            }
-            out.println("<br><b>Сумма заказа: </b>" + Pack.SummPack(Pack.ListPack) + "<b> руб</b>") ;
+//            out.println("<br><a href=\"http://localhost:8080/HB_2.0/DemoClearPack\">"
+//                    + "Очистить корзину</a><br> ");
+//            
+//            if (!menu.Pack.ListPack.isEmpty()) {
+//                for (Item i : menu.Pack.ListPack) {
+//                    out.println("<br>" + i.toStringItem(i) + "<br><br>");
+//                }
+//            } else {
+//                out.println("<b> В данном разделе блюд нет </b>");
+//            }
+//            out.println("<br><b>Сумма заказа: </b>" + Pack.SummPack(Pack.ListPack) + "<b> руб</b>") ;
             out.println("</body>");
             out.println("</html>");
         } finally {

@@ -18,33 +18,33 @@ public class DemoAddPack extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         PrintWriter out = response.getWriter();
 
-        String itemTitle = request.getParameter("itemTitle");
-        String itemDesc = request.getParameter("itemDesc");
-        Integer itemCost = Integer.parseInt(request.getParameter("itemCost"));
-        String itemCategory = request.getParameter("itemCategory");
-        Pack.AddToListPack(itemTitle, itemDesc, itemCost, itemCategory);
-        HttpSession session = request.getSession(true);      
-session.setAttribute("cart", Pack.ListPack);   
-response.sendRedirect("DemoListPack");
-        try {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<br><a href=\"http://localhost:8080/microsoft-vt-master/DemoClearPack\">"
-                    + "Очистить корзину</a><br> ");
-
-
-            if (!Pack.ListPack.isEmpty()) {
-                for (Item i : Pack.ListPack) {
-                    out.println("<br>" + i.toStringItem(i) + "<br><br>");
-                }
-            } else {
-                out.println("<b> В данном разделе блюд нет </b>");
-            }
-            out.println("</body>");
-            out.println("</html>");
+//        String itemTitle = request.getParameter("itemTitle");
+//        String itemDesc = request.getParameter("itemDesc");
+//        Integer itemCost = Integer.parseInt(request.getParameter("itemCost"));
+//        String itemCategory = request.getParameter("itemCategory");
+//        Pack.AddToListPack(itemTitle, itemDesc, itemCost, itemCategory);
+//        HttpSession session = request.getSession(true);      
+//session.setAttribute("cart", Pack.ListPack);   
+//response.sendRedirect("DemoListPack");
+       try {
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<br><a href=\"http://localhost:8080/microsoft-vt-master/DemoClearPack\">"
+//                    + "Очистить корзину</a><br> ");
+//
+//
+//            if (!Pack.ListPack.isEmpty()) {
+//                for (Item i : Pack.ListPack) {
+//                    out.println("<br>" + i.toStringItem(i) + "<br><br>");
+//                }
+//            } else {
+//                out.println("<b> В данном разделе блюд нет </b>");
+//            }
+//            out.println("</body>");
+//            out.println("</html>");
         } finally {
             out.close();
         }
