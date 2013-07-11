@@ -37,42 +37,6 @@
                 </tr>                
             </table>
         </form>
-        <a href="http://localhost:8080/microsoft-vt-master/DemoListPack">Посмотреть корзину</a> 
-        
-        <h2>Ваше меню:</h2>
-        <%
-         try{
-        HibernateUtils.getSessionFactoryInstance();
-        
-      }catch (Throwable ex) { 
-         System.err.println("Failed to create sessionFactory object." + ex);
-         throw new ExceptionInInitializerError(ex); 
-      }
-            HibernateUtils hbUtils = new HibernateUtils();
-            List<Item> listItems = hbUtils.getItemList();
-            for (Item i : listItems) {
-                out.println ("<div style=\"background:#2E7BCC; \">");
-                out.println("<br>" + i.toStringItem(i));
-                out.println("<br><a href=\"http://localhost:8080/microsoft-vt-master/DemoAddPack?"
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "&itemCost=" + i.getItemCategory()
-                        + "\">Добавить в корзину</a> (Эта кнопка в меню для посетителей)<br> ");
 
-                out.println("<a href=\"http://localhost:8080/microsoft-vt-master/DemoUpdate.jsp?"
-                        + "itemID=" + i.getItemID()
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "&itemCost=" + i.getItemCategory()
-                        + "\">Редактировать</a> |  ");
-                
-                out.println("<a href=\"http://localhost:8080/microsoft-vt-master/DemoDelete?"
-                        + "itemID=" + i.getItemID()
-                        + "\">Удалить</a> (Эти кнопки для администрации ресторана)<br><br><hr>");
-                out.println ("</div>");
-            }
-%>
     </body>
 </html>
