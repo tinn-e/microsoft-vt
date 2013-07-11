@@ -22,28 +22,7 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `menudb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `menudb`;
 
--- --------------------------------------------------------
 
---
--- Структура таблицы `categories`
---
-
-CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(6) NOT NULL AUTO_INCREMENT,
-  `categoryName` varchar(100) NOT NULL,
-  KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-
---
--- Дамп данных таблицы `categories`
---
-
-INSERT INTO `categories` (`id`, `categoryName`) VALUES
-
-(2, 'Салаты'),
-(3, 'Первые блюда'),
-(4, 'Вторые блюда'),
-(5, 'Выпечка');
 
 -- --------------------------------------------------------
 
@@ -64,9 +43,6 @@ CREATE TABLE IF NOT EXISTS `items` (
 -- Дамп данных таблицы `items`
 --
 
-INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
-(1, 'qqq', 'www', 111, 'Закуски'),
-(2, 'борщ', 'вкусный', 444, 'Первые блюда');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
