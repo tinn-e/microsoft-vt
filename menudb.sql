@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 08 2013 г., 13:26
+-- Время создания: Июл 11 2013 г., 21:46
 -- Версия сервера: 5.5.32
 -- Версия PHP: 5.4.16
 
@@ -25,6 +25,30 @@ USE `menudb`;
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `categoryName` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `categories`
+--
+
+INSERT INTO `categories` (`id`, `categoryName`) VALUES
+(1, 'Закуски'),
+(2, 'Салаты'),
+(3, 'Первые блюда'),
+(4, 'Вторые блюда'),
+(5, 'Выпечка');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `items`
 --
 
@@ -35,7 +59,15 @@ CREATE TABLE IF NOT EXISTS `items` (
   `prodCost` int(11) DEFAULT NULL,
   `prodCategory` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=279 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+
+--
+-- Дамп данных таблицы `items`
+--
+
+INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
+(74, 'qqq', 'www', 111, 'Закуски'),
+(75, 'борщ', 'вкусный', 444, 'Первые блюда');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
