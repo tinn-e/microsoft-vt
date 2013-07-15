@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 15 2013 г., 10:29
+-- Время создания: Июл 15 2013 г., 15:37
 -- Версия сервера: 5.5.32
 -- Версия PHP: 5.4.16
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `categoryName` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Очистить таблицу перед добавлением данных `categories`
@@ -46,11 +46,11 @@ TRUNCATE TABLE `categories`;
 --
 
 INSERT INTO `categories` (`id`, `categoryName`) VALUES
-(1, 'Закуски'),
-(2, 'Салаты'),
-(3, 'Первые блюда'),
-(4, 'Вторые блюда'),
-(5, 'Выпечка');
+(18, 'Закуски'),
+(19, 'Первые блюда'),
+(20, 'Вторые блюда'),
+(21, 'Десерты'),
+(22, 'Выпечка');
 
 -- --------------------------------------------------------
 
@@ -66,13 +66,21 @@ CREATE TABLE IF NOT EXISTS `items` (
   `prodCost` int(11) DEFAULT NULL,
   `prodCategory` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=132 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
 
 --
 -- Очистить таблицу перед добавлением данных `items`
 --
 
 TRUNCATE TABLE `items`;
+--
+-- Дамп данных таблицы `items`
+--
+
+INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
+(86, 'Суп гороховый', 'Вкусный', 100, 'Первые блюда'),
+(87, 'ййй', 'ццц', 3333, 'Закуски');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
