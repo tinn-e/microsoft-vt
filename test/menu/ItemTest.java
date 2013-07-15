@@ -4,11 +4,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ItemTest {
-    
+
     public ItemTest() {
     }
 
-@Test
+    @Test
     public void testSetAndGetItemID() {
         Item instance = new Item();
         int id = 100;
@@ -47,8 +47,9 @@ public class ItemTest {
         int result = instance.getItemCost();
         assertEquals(expResult, result);
     }
+
     @Test
-    public void testSetAndGetItemCategory(){
+    public void testSetAndGetItemCategory() {
         Item instance = new Item();
         String category = "Горячее";
         instance.setItemCategory(category);
@@ -56,60 +57,64 @@ public class ItemTest {
         String result = instance.getItemCategory();
         assertEquals(expResult, result);
     }
+
     @Test
-        public void testPrintItemCategory(){
+    public void testPrintItemCategory() {
         Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
-        String expResult = "<b>Категория:<b> Горячее";
+        String expResult = "<b>Категория:</b> Горячее";
         String result = instance.printItemCategory(instance);
         assertEquals(expResult, result);
     }
+
     @Test
-        public void testPrintItemTitle(){
+    public void testPrintItemTitle() {
         Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
         String expResult = "<b>Название:</b> Картошка жареная";
         String result = instance.printItemTitle(instance);
         assertEquals(expResult, result);
     }
+
     @Test
-        public void testPrintItemDesc(){
+    public void testPrintItemDesc() {
         Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
         String expResult = "<b>Описание:</b> Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами";
         String result = instance.printItemDesc(instance);
         assertEquals(expResult, result);
     }
+
     @Test
-        public void testPrintItemCost(){
+    public void testPrintItemCost() {
         Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качестваи", 200, "Горячее");
         String expResult = "<b>Цена:</b> 200 руб";
         String result = instance.printItemCost(instance);
         assertEquals(expResult, result);
     }
+
     @Test
-        public void testToStringItem(){
+    public void testToStringItem() {
         Item instance = new Item("Картошка жареная", "Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами", 200, "Горячее");
-        String expResult = "<b>Название:</b> Картошка жареная<br><b>Описание:</b> Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами<br><b>Цена:</b> 200 руб<br><b>Категория:<b> Горячее";
+        String expResult = "<b>Название:</b> Картошка жареная<br><b>Описание:</b> Картошка, собранная в самых плодородных полях Белоруссии, отличающаяся своими исключительными вкусовыи качествами<br><b>Цена:</b> 200 руб<br><b>Категория:</b> Горячее";
         String result = instance.toStringItem(instance);
         assertEquals(expResult, result);
     }
-    
+
     @Test
-     public void testSetMark(){
+    public void testSetMark() {
         Item instanse = new Item("pirog", "sladkiy", 400, "desert");
         instanse.setMark(5);
         instanse.setMark(5);
         instanse.setMark(5);
         int expResult = 15;
         int result = instanse.getMarkOfUser();
-        assertEquals(expResult,result);
-        
+        assertEquals(expResult, result);
+
         int expValueOfMarks = 3;
         int resValueOfMarks = instanse.getValueOfMarks();
-        assertEquals(expValueOfMarks,expValueOfMarks);
-        
-        instanse.setRatingOfItem((double)instanse.getMarkOfUser()/(double)instanse.getValueOfMarks());
+        assertEquals(expValueOfMarks, expValueOfMarks);
+
+        instanse.setRatingOfItem((double) instanse.getMarkOfUser() / (double) instanse.getValueOfMarks());
         Double expResultRate = 5.0;
         Double resultRate = instanse.getRatingOfItem();
-        assertEquals(expResultRate,resultRate);
-            }
-
+        assertEquals(expResultRate, resultRate);
+    }
 }

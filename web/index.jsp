@@ -1,3 +1,4 @@
+<%@page import="menu.Category"%>
 <%@page import="java.util.List"%>
 <%@page import="menu.Item"%>
 <%@page import="menu.HibernateUtils"%>
@@ -9,8 +10,9 @@
         <title>Меню</title>
     </head>
     <body>
-
-            <h1>Проект команды Microsoft в разработке!</h1>
-
+        <h2>Прототип проекта от команды Microsoft</h2>
+        
+        <a href="/MENU/root-panel/login.jsp">Панель адинистратора</a><br>
+        <a href="/microsoft-vt/client/index.jsp">Клиент</a><br>
     </body>
 </html>

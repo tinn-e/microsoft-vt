@@ -99,7 +99,7 @@ public class Item {
     }
     
     public String printItemCategory(Item item){
-        return "<b>Категория:<b> " + item.getItemCategory();
+        return "<b>Категория:</b> " + item.getItemCategory();
     }
 
     public String toStringItem(Item item) {

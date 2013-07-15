@@ -19,31 +19,38 @@ public class HibernateUtils {
         }
         return factory;
     }
+    
+    public static Session getSessionInstance() {
+        if (session == null) {
+            session = HibernateUtils.getSessionFactoryInstance().openSession();
+        }
+        return session;
+    }
 
       public Integer addItem(Item item){
-      HibernateUtils.session = HibernateUtils.factory.openSession();
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
       Transaction tx = null;
       Integer itemID = null;
       try{
-         tx = HibernateUtils.session.beginTransaction();
-         itemID = (Integer)HibernateUtils.session.save(item); 
+         tx = session2.beginTransaction();
+         itemID = (Integer)session2.save(item); 
          tx.commit();
       }catch (HibernateException e) {
          if (tx!=null) tx.rollback();
          e.printStackTrace(); 
       }finally {
-         HibernateUtils.session.close(); 
+         session2.close(); 
       }
       return itemID;
    }
       
       public List <Item> getItemList(){
-      HibernateUtils.session = HibernateUtils.factory.openSession();
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
       Transaction tx = null;
       List ListItems = null;
       try{
-         tx = HibernateUtils.session.beginTransaction();
-         ListItems = HibernateUtils.session.createQuery("FROM Item").list(); 
+         tx = session2.beginTransaction();
+         ListItems = session2.createQuery("FROM Item").list(); 
          for (Iterator iterator = 
                            ListItems.iterator(); iterator.hasNext();){
             Item prod = (Item) iterator.next(); 
@@ -53,122 +60,35 @@ public class HibernateUtils {
          if (tx!=null) tx.rollback();
          e.printStackTrace(); 
       }finally {
-         HibernateUtils.session.close(); 
+        session2.close(); 
       }
         return ListItems;
    }
-      
-      public List <Item> getItemCategoryList(String cat){
-      HibernateUtils.session = HibernateUtils.factory.openSession();
-      Transaction tx = null;
-      List listItems = null;
-      try{
-         tx = HibernateUtils.session.beginTransaction();
          
-         String hql = "FROM Item E WHERE E.itemCategory = '" + cat + "'";
-         listItems = HibernateUtils.session.createQuery(hql).list(); 
-         for (Iterator iterator = 
-                           listItems.iterator(); iterator.hasNext();){
-            Item prod = (Item) iterator.next(); 
-         }
-         tx.commit();
-      }catch (HibernateException e) {
-         if (tx!=null) tx.rollback();
-         e.printStackTrace(); 
-      }finally {
-         HibernateUtils.session.close(); 
-      }
-        return listItems;
-   }      
       
       public String deleteItem(int ItemID){
-      HibernateUtils.session = HibernateUtils.factory.openSession();
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
       Transaction tx = null;
       try{
-         tx = session.beginTransaction();
+         tx = session2.beginTransaction();
          Item prod = 
-                   (Item)session.get(Item.class, ItemID); 
-         session.delete(prod); 
+                   (Item)session2.get(Item.class, ItemID); 
+         session2.delete(prod); 
          tx.commit();
       }catch (HibernateException e) {
          if (tx!=null) tx.rollback();
          e.printStackTrace(); 
       }finally {
-         session.close(); 
+         session2.close(); 
       }
         return "Успешно удален!";
    }
-      
-       /*
-       метод для добавления категории в базу данных
-       */
-      public Integer addCategory(Category category) {
-        HibernateUtils.session = HibernateUtils.factory.openSession();
-        Transaction tx = null;
-        Integer catID = null;        
-        try {
-            tx = tx = HibernateUtils.session.beginTransaction();
-            catID = (Integer) HibernateUtils.session.save(category);
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            HibernateUtils.session.close();
-        }
-          return catID;
-      }      
-      /*
-       Метод для получения коллекции категорий
-       */
-      public List <Item> getCategoryList(){
-      HibernateUtils.session = HibernateUtils.factory.openSession();
-      Transaction tx = null;
-      List ListItems = null;
-      try{
-         tx = HibernateUtils.session.beginTransaction();
-         ListItems = HibernateUtils.session.createQuery("FROM Category").list(); 
-         for (Iterator iterator = 
-                           ListItems.iterator(); iterator.hasNext();){
-            Category cat = (Category) iterator.next(); 
-         }
-         tx.commit();
-      }catch (HibernateException e) {
-         if (tx!=null) tx.rollback();
-         e.printStackTrace(); 
-      }finally {
-         HibernateUtils.session.close(); 
-      }
-        return ListItems;
-   }
-      /*
-       Метод удаления категории
-       */
-      public String deleteCategory (int catID){
-          HibernateUtils.session = HibernateUtils.factory.openSession();
-      Transaction tx = null;
-      try{
-         tx = session.beginTransaction();
-         Category cat = 
-                   (Category)session.get(Item.class, catID); 
-         session.delete(cat); 
-         tx.commit();
-      }catch (HibernateException e) {
-         if (tx!=null) tx.rollback();
-         e.printStackTrace(); 
-      }finally {
-         session.close(); 
-      }
-        return "Категория успешно удалена.";
-      }
-      
+ 
       
       public String deleteAllItem(){
-      HibernateUtils.session = HibernateUtils.factory.openSession();
+      HibernateUtils instanse = new HibernateUtils();
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
       try{
-        HibernateUtils instanse = new HibernateUtils();
         List<Item> list = instanse.getItemList();
         int ID = 0;
         for (Item i : list){
@@ -178,31 +98,140 @@ public class HibernateUtils {
       }catch (HibernateException e) {
          e.printStackTrace(); 
       }finally {
-         //session.close(); 
+         session2.close(); 
       }
         return "ОК";
    }
       
       public String updateItem(int itemID, String itemTitle,
                              String itemDesc, int itemCost, String itemCategory){
-      HibernateUtils.session = HibernateUtils.factory.openSession();
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
       Transaction tx = null;
       try{
-         tx = session.beginTransaction();
-         Item item = (Item)session.get(Item.class, itemID); 
+         tx = session2.beginTransaction();
+         Item item = (Item)session2.get(Item.class, itemID); 
          item.setItemTitle(itemTitle);
          item.setItemDesc(itemDesc);
          item.setItemCost(itemCost);
          item.setItemCategory(itemCategory);
-		 session.update(item); 
+		 session2.update(item); 
          tx.commit();
       }catch (HibernateException e) {
          if (tx!=null) tx.rollback();
          e.printStackTrace(); 
       }finally {
-         session.close(); 
+         session2.close(); 
       }
         return "Успешно отредактировано!";
    }
+      /////////////////////////////////////////////////////////////
+      /////////////////////////////////////////////////////////////
       
+
+       //Метод для добавления категории в базу данных
+
+      public Integer addCategory(Category category) {
+        Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
+        Transaction tx = null;
+        Integer catID = null;        
+        try {
+            tx= session2.beginTransaction();
+            catID = (Integer)session2.save(category);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session2.close();
+        }
+          return catID;
+      }      
+      
+       // Метод для получения коллекции категорий
+      
+      public List <Category> getCategoryList(){
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
+      Transaction tx = null;
+      List ListItems = null;
+      try{
+         tx = session2.beginTransaction();
+         ListItems = session2.createQuery("FROM Category").list(); 
+         for (Iterator iterator = 
+                           ListItems.iterator(); iterator.hasNext();){
+            Category cat = (Category) iterator.next(); 
+         }
+         tx.commit();
+      }catch (HibernateException e) {
+         if (tx!=null) tx.rollback();
+         e.printStackTrace(); 
+      }finally {
+         session2.close(); 
+      }
+        return ListItems;
+   }
+    
+       //Метод удаления категории
+ 
+      public String deleteCategory (int catID){
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
+      Transaction tx = null;
+      try{
+         tx = session2.beginTransaction();
+         Category cat = 
+                   (Category)session2.get(Category.class, catID); 
+         session2.delete(cat); 
+         tx.commit();
+      }catch (HibernateException e) {
+         if (tx!=null) tx.rollback();
+         e.printStackTrace(); 
+      }finally {
+         session2.close(); 
+      }
+        return "Категория успешно удалена.";
+      }
+      
+      
+      public String deleteAllCategories() {
+        HibernateUtils instanse = new HibernateUtils();
+        Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
+        try {
+            List<Category> list = instanse.getCategoryList();
+            int ID = 0;
+            for (Category i : list) {
+                ID = i.getCategoryID();
+                instanse.deleteCategory(ID);
+            }
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session2.close(); 
+        }
+        return "ОК";
+    }
+      
+      //Получения списка всех категорий
+      public List <Item> getItemCategoryList(String cat){
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
+      Transaction tx = null;
+      List listItems = null;
+      try{
+         tx = session2.beginTransaction();
+         
+         String hql = "FROM Item E WHERE E.itemCategory = '" + cat + "'";
+         listItems = session2.createQuery(hql).list(); 
+         for (Iterator iterator = 
+                           listItems.iterator(); iterator.hasNext();){
+            Item prod = (Item) iterator.next(); 
+         }
+         tx.commit();
+      }catch (HibernateException e) {
+         if (tx!=null) tx.rollback();
+         e.printStackTrace(); 
+      }finally {
+         session2.close(); 
+      }
+        return listItems;
+   }   
 }
