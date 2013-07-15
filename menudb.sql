@@ -46,7 +46,7 @@ TRUNCATE TABLE `categories`;
 --
 
 INSERT INTO `categories` (`id`, `categoryName`) VALUES
-(18, 'Закуски'),
+(18, 'Закуски2'),
 (19, 'Первые блюда'),
 (20, 'Вторые блюда'),
 (21, 'Десерты'),

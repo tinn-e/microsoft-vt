@@ -1,53 +1,36 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package menu;
 
+/**
+ *
+ * @author Сергей
+ */
 public class Category {
-
-    private int categoryID;
+    private Integer categoryID;
     private String categoryName;
-
-    public Category() {
-    }
-
-    public Category(String catName) {
+    
+    public Category() {}
+    public Category(Integer catID, String catName) {
+        this.categoryID = catID;
         this.categoryName = catName;
     }
-
-    public Category(int ID, String catName) {
-        this.categoryID = ID;
-        this.categoryName = catName;
-    }
-
-    public void setCategoryID(int ID) {
+        
+    public void setID (Integer ID){
         this.categoryID = ID;
     }
-
-    public int getCategoryID() {
+    
+    public Integer getID (){
         return categoryID;
     }
-
-    public void setCategoryName(String categoryName) {
+    
+    public void setCategoryName (String categoryName){
         this.categoryName = categoryName;
     }
-
-    public String getCategoryName() {
+    
+    public String getCategoryName(){
         return categoryName;
-    }
-
-    public boolean equals(Category obj) {
-        if (obj == null) {
-            return false;
-        }
-        // проверка на случай, если сравнение с самим собой
-        if (obj == this) {
-            return true;
-        }
-        if (obj.getClass() == this.getClass()) {
-            Category cat = (Category) obj;
-            if (cat.categoryID == this.categoryID
-                    && cat.categoryName.equals(this.categoryName)) {
-                return true;
-            }
-        }
-        return false;
     }
 }
