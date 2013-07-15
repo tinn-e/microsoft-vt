@@ -13,7 +13,31 @@
             request.setCharacterEncoding("utf-8");
             response.setContentType("text/html");
         %>
-
+        <form action="DemoAdd" method = "GET">
+            <h1>Добавить </h1>
+            <table>
+                <tr>
+                    <td> Название: </td>
+                    <td> <input type="text" name="itemTitle">
+                </tr>
+                <tr>
+                    <td> Описание: </td>
+                    <td> <input type="text" name="itemDesc">
+                </tr>
+                <tr>
+                    <td> Цена: </td>
+                    <td>  <input type="text" name="itemCost">     
+                </tr>
+                <tr> 
+                    <td> Категория: </td>
+                    <td>  <input type="text" name="itemCategoty">     
+                </tr>
+                <tr> 
+                    <td colspan="2"> <input type="submit" value="Добавить">
+                </tr>                
+            </table>
+        </form>
+        <a href="http://localhost:8080/microsoft-vt-master/DemoListPack">Посмотреть корзину</a> 
         
         <h2>Ваше меню:</h2>
         <%
@@ -21,23 +45,34 @@
         HibernateUtils.getSessionFactoryInstance();
         
       }catch (Throwable ex) { 
-         out.println ("Фабрика не создана!");
+         System.err.println("Failed to create sessionFactory object." + ex);
          throw new ExceptionInInitializerError(ex); 
       }
             HibernateUtils hbUtils = new HibernateUtils();
-            %>
- <h2>Ваше меню:</h2>
-         <%
-  List <Category> listCat2 = hbUtils.getCategoryList();
-  List <Item> listItems = null;
-  String cat = "";
-   for (Category i : listCat2) {
-               cat = i.getCategoryName();
-               out.println("<h3>"+cat+"</h3>");
-               listItems = hbUtils.getItemCategoryList(cat);
-               if(listItems .size()==0){
-                   out.println ("Тут пусто :(");
-               }
+            List<Item> listItems = hbUtils.getItemList();
+            for (Item i : listItems) {
+                out.println ("<div style=\"background:#2E7BCC; \">");
+                out.println("<br>" + i.toStringItem(i));
+                out.println("<br><a href=\"http://localhost:8080/microsoft-vt-master/DemoAddPack?"
+                        + "&itemTitle=" + i.getItemTitle()
+                        + "&itemDesc=" + i.getItemDesc()
+                        + "&itemCost=" + i.getItemCost()
+                        + "&itemCost=" + i.getItemCategory()
+                        + "\">Добавить в корзину</a> (Эта кнопка в меню для посетителей)<br> ");
+
+                out.println("<a href=\"http://localhost:8080/microsoft-vt-master/DemoUpdate.jsp?"
+                        + "itemID=" + i.getItemID()
+                        + "&itemTitle=" + i.getItemTitle()
+                        + "&itemDesc=" + i.getItemDesc()
+                        + "&itemCost=" + i.getItemCost()
+                        + "&itemCost=" + i.getItemCategory()
+                        + "\">Редактировать</a> |  ");
+                
+                out.println("<a href=\"http://localhost:8080/microsoft-vt-master/DemoDelete?"
+                        + "itemID=" + i.getItemID()
+                        + "\">Удалить</a> (Эти кнопки для администрации ресторана)<br><br><hr>");
+                out.println ("</div>");
+            }
 %>
     </body>
 </html>
