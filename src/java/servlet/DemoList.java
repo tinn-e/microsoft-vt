@@ -35,35 +35,17 @@ public class DemoList extends HttpServlet {
             out.println("<body>");
             
             HibernateUtils hbUtils = new HibernateUtils();
-            List<Item> listItems = hbUtils.getItemList();
-            List<Item> listItems2 = hbUtils.getItemCategoryList("дно");
             
-             for (Item i2 : listItems2) {
+        Item expResult = new Item("Суп гороховый", "вкусный", 100, "Супы");
+        Item expResult2 = new Item("Суп гороховый2", "вкусный2", 100, "Супы2");
+        instanse.addItem(expResult);
+        instanse.addItem(expResult2);
+            List<Item> listItems = hbUtils.getItemList();
+             for (Item i2 : listItems) {
                  out.println("<br>" + i2.toStringItem(i2));
              }
-            out.println(listItems2.size());
-            
-            for (Item i : listItems) {
-                
-                out.println("<br>" + i.toStringItem(i));
-                out.println("<br><a href=\"http://localhost:8080/HB_2.0/DemoPack?"
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "\">Добавить в корзину</a> (Эта кнопка в меню для посетителей)<br> ");
-
-                out.println("<a href=\"http://localhost:8080/HB_2.0/DemoUpdate.jsp?"
-                        + "itemID=" + i.getItemID()
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "\">Редактировать</a> |  ");
-                
-                out.println("<a href=\"http://localhost:8080/HB_2.0/DemoDelete?"
-                        + "itemID=" + i.getItemID()
-                        + "\">Удалить</a> (Эти кнопки для администрации ресторана)<br><br><hr>");
-            }
-            
+            out.println(listItems.size());
+           
             out.println("</body>");
             out.println("</html>");
         } finally {            
