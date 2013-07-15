@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 15 2013 г., 10:26
+-- Время создания: Июл 15 2013 г., 10:29
 -- Версия сервера: 5.5.32
 -- Версия PHP: 5.4.16
 
@@ -28,6 +28,7 @@ USE `menudb`;
 -- Структура таблицы `categories`
 --
 
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(100) NOT NULL,
@@ -35,6 +36,11 @@ CREATE TABLE IF NOT EXISTS `categories` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
+--
+-- Очистить таблицу перед добавлением данных `categories`
+--
+
+TRUNCATE TABLE `categories`;
 --
 -- Дамп данных таблицы `categories`
 --
@@ -52,6 +58,7 @@ INSERT INTO `categories` (`id`, `categoryName`) VALUES
 -- Структура таблицы `items`
 --
 
+DROP TABLE IF EXISTS `items`;
 CREATE TABLE IF NOT EXISTS `items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `prodTitle` varchar(70) DEFAULT NULL,
@@ -61,8 +68,11 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=132 ;
 
+--
+-- Очистить таблицу перед добавлением данных `items`
+--
+
+TRUNCATE TABLE `items`;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
