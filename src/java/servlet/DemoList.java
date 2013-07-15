@@ -38,8 +38,8 @@ public class DemoList extends HttpServlet {
             
         Item expResult = new Item("Суп гороховый", "вкусный", 100, "Супы");
         Item expResult2 = new Item("Суп гороховый2", "вкусный2", 100, "Супы2");
-        instanse.addItem(expResult);
-        instanse.addItem(expResult2);
+        hbUtils.addItem(expResult);
+        hbUtils.addItem(expResult2);
             List<Item> listItems = hbUtils.getItemList();
              for (Item i2 : listItems) {
                  out.println("<br>" + i2.toStringItem(i2));
