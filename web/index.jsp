@@ -1,5 +1,4 @@
 
-
 <%@page import="java.util.List"%>
 <%@page import="menu.Item"%>
 <%@page import="menu.HibernateUtils"%>
@@ -37,7 +36,7 @@
             String cat = "Закуски";
             List<Item> listItems = hbUtils.getItemCategoryList(cat);
             for (Item i : listItems) {
-                out.println ("<a href=\"http://localhost:8080/MENU/AddPack?"
+                out.println ("<a href=\"/MENU/AddPack?"
                         + "&itemTitle=" + i.getItemTitle()
                         + "&itemDesc=" + i.getItemDesc()
                         + "&itemCost=" + i.getItemCost()
@@ -63,7 +62,7 @@
             String cat2 = "Выпечка";
             List<Item> listItems2 = hbUtils.getItemCategoryList(cat2);
             for (Item i : listItems2) {
-                out.println ("<a href=\"http://localhost:8080/MENU/AddPack?"
+                out.println ("<a href=\"/MENU/AddPack?"
                         + "&itemTitle=" + i.getItemTitle()
                         + "&itemDesc=" + i.getItemDesc()
                         + "&itemCost=" + i.getItemCost()
@@ -88,7 +87,7 @@
             String cat3 = "Вторые блюда";
             List<Item> listItems3 = hbUtils.getItemCategoryList(cat3);
             for (Item i : listItems3) {
-                out.println ("<a href=\"http://localhost:8080/MENU/AddPack?"
+                out.println ("<a href=\"/MENU/AddPack?"
                         + "&itemTitle=" + i.getItemTitle()
                         + "&itemDesc=" + i.getItemDesc()
                         + "&itemCost=" + i.getItemCost()
