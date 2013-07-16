@@ -4,25 +4,9 @@
         <servlet-name>AddPack</servlet-name>
         <servlet-class>servlet.AddPack</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>AuthorizationServlet</servlet-name>
-        <servlet-class>servlet.AuthorizationServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddItemServlet</servlet-name>
-        <servlet-class>servlet.AddItemServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>AddPack</servlet-name>
         <url-pattern>/AddPack</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AuthorizationServlet</servlet-name>
-        <url-pattern>/AuthorizationServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddItemServlet</servlet-name>
-        <url-pattern>/AddItemServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

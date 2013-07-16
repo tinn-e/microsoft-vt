@@ -39,7 +39,7 @@ function start(){
       if (xhttp.readyState==4 && xhttp.status==200)
          document.getElementById('q').innerHTML=xhttp.responseText;
    }
-   xhttp.open('GET','../AddItemServlet?itemTitle='+x+'&itemDesc='
+   xhttp.open('GET','/microsoft-vt/DemoAdd?itemTitle='+x+'&itemDesc='
        +y+'&itemCost='+z+'&itemCategory='+z2,true);
    xhttp.send();
 }
@@ -124,14 +124,14 @@ function start(){
                 out.println (" <div id=\"container_buttons\">");
                 out.println("<br>" + i2.toStringItem(i2));
                 
-                /*out.println("<br><a href=\"http://localhost:8080/MENU/DemoAddPack?"
+                /*out.println("<br><a href=\"http://localhost:8080/microsoft-vt/DemoAddPack?"
                         + "&itemTitle=" + i.getItemTitle()
                         + "&itemDesc=" + i.getItemDesc()
                         + "&itemCost=" + i.getItemCost()
                         + "&itemCost=" + i.getItemCategory()
                         + "\">Добавить в корзину</a> (Эта кнопка в меню для посетителей)<br> ");*/
 
-                out.println("<br><a href=\"http://localhost:8080/MENU/DemoUpdate.jsp?"
+                out.println("<br><a href=\"http://localhost:8080/microsoft-vt/DemoUpdate.jsp?"
                         + "itemID=" + i2.getItemID()
                         + "&itemTitle=" + i2.getItemTitle()
                         + "&itemDesc=" + i2.getItemDesc()
@@ -139,7 +139,7 @@ function start(){
                         + "&itemCategory=" + i2.getItemCategory()
                         + "\">Редактировать</a> |  ");
                 
-                out.println("<a href=\"http://localhost:8080/MENU/DemoDelete?"
+                out.println("<a href=\"http://localhost:8080/microsoft-vt/DemoDelete?"
                         + "itemID=" + i2.getItemID()
                         + "\">Удалить</a><br>");
                 out.println (" </div>");
