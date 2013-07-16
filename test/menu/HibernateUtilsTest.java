@@ -140,4 +140,19 @@ public class HibernateUtilsTest {
         int result = list.size();
         assertEquals(expResult, result);
     }
+    
+        @Test
+    public void testAddUser() {
+        HibernateUtils instanse = new HibernateUtils();
+        User expResult = new User("admin", "000000",1);
+        instanse.addUser(expResult);
+        List<User> a = instanse.getUserList();
+        User result = a.get(1); //получает последний элемент из базы
+
+        if (expResult.equals(result)) {
+            System.out.println("testAddUser -- True");
+        } else {
+            System.out.println("testAddUser -- False");
+        }
+    }
 }
