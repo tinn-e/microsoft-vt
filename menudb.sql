@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 15 2013 г., 15:37
+-- Время создания: Июл 16 2013 г., 22:24
 -- Версия сервера: 5.5.32
 -- Версия PHP: 5.4.16
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `categoryName` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Очистить таблицу перед добавлением данных `categories`
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `prodCost` int(11) DEFAULT NULL,
   `prodCategory` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100 ;
 
 --
 -- Очистить таблицу перед добавлением данных `items`
@@ -80,6 +80,35 @@ TRUNCATE TABLE `items`;
 INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
 (86, 'Суп гороховый', 'Вкусный', 100, 'Первые блюда'),
 (87, 'ййй', 'ццц', 3333, 'Закуски');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(200) NOT NULL AUTO_INCREMENT,
+  `login` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Очистить таблицу перед добавлением данных `users`
+--
+
+TRUNCATE TABLE `users`;
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `password`) VALUES
+(1, 'user', '000000'),
+(2, 'admin', '000000'),
+(3, 'admin', '000000');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
