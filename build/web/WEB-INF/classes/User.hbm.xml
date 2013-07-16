@@ -3,7 +3,7 @@
  "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://localhost:8080/MENU/hibernate-mapping-3.0.dtd"> 
 <hibernate-mapping>
-   <class name="menu.User" table="USERS">
+   <class name="menu.User" table="users">
       <id name="id" type="int" column="id">
          <generator class="native"/>
       </id>
