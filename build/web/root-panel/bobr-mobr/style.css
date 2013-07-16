@@ -1,0 +1,14 @@
+
+
+#container_buttons{
+	width: 100%;
+	background: rgba(255,255,255,0.3);
+	padding: 10px 10px 10px 10px;
+	border-radius: 15px;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.39) inset;
+}
+
+#container_buttons p{
+	display:block;
+	padding-bottom:60px;
+}
