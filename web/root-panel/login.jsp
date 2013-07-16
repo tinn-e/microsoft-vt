@@ -11,7 +11,7 @@
   <div class="container">
     <section class="login">
       <h1>Панель адинистратора</h1>
-      <form method="GET" action="/MENU/root-panel/bobr-mobr/index.jsp">
+      <form method="GET" action="../AuthorizationServlet">
         <p><input type="text" name="login" placeholder="Введите логин"></p>
         <p><input type="password" name="password" placeholder="Введите пароль"></p>
         <p class="remember_me">
