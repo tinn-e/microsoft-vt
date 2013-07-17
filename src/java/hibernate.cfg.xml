@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
-"http://localhost:8080/MENU/hibernate-configuration-3.0.dtd"> 
+"http://xn--2-7sbap2amif.xn--j1aoae.xn--p1ai:8080/MENU/hibernate-configuration-3.0.dtd"> 
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
