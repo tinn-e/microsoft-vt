@@ -27,26 +27,32 @@ public class AuthorizationServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         HibernateUtils hibernateUtils = new HibernateUtils();
-        
-            String login = request.getParameter("login");
-            String password = request.getParameter("password");
-            String userLogin = null;
-            String userPassword = null;           
-            List<User> list = hibernateUtils.getUserList();
-            for (User i : list) {
-                userLogin = i.getLogin();
-                userPassword = i.getPassword();
 
-                if (userLogin.equals(login) == true && userPassword.equals(password) == true) {
-                    response.sendRedirect(request.getContextPath() + "/root-panel/bobr-mobr/index.jsp");
-                    //response.sendRedirect("http://localhost:8084/MENU/root-panel/bobr-mobr/index.jsp");
-                    return;
-                } else {
-                    response.sendRedirect(request.getContextPath() + "/root-panel/error.jsp");
-                    //response.sendRedirect("http://localhost:8084/MENU/root-panel/error.jsp");
-                   return;
-                }
+       
+
+//            String login = request.getParameter("login");
+//            String password = request.getParameter("password");
+        String login = request.getParameter("username");
+        String password = request.getParameter("password");
+        String userLogin = null;
+        String userPassword = null;
+        List<User> list = hibernateUtils.getUserList();
+        for (User i : list) {
+            userLogin = i.getLogin();
+            userPassword = i.getPassword();
+
+            if (userLogin.equals(login) == true && userPassword.equals(password) == true) {
+                out.println("You have successfully logged in");
+                //response.sendRedirect(request.getContextPath() + "/root-panel/bobr-mobr/index.jsp");
+                //response.sendRedirect("http://localhost:8084/MENU/root-panel/bobr-mobr/index.jsp");
+                return;
+            } else {
+                out.println("Wrong login or password");
+                //response.sendRedirect(request.getContextPath() + "/root-panel/error.jsp");
+                //response.sendRedirect("http://localhost:8084/MENU/root-panel/error.jsp");
+                return;
             }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
