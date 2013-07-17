@@ -107,7 +107,7 @@ TRUNCATE TABLE `users`;
 
 INSERT INTO `users` (`id`, `login`, `password`) VALUES
 (1, 'user', '000000'),
-(2, 'admin', '000000'),
+(2, 'admin', '000000');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
