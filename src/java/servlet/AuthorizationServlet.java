@@ -38,12 +38,11 @@ public class AuthorizationServlet extends HttpServlet {
                 userPassword = i.getPassword();
 
                 if (userLogin.equals(login) == true && userPassword.equals(password) == true) {
-                    response.sendRedirect(request.getContextPath() + "/root-panel/bobr-mobr/index.jsp");
-                    //response.sendRedirect("http://localhost:8084/MENU/root-panel/bobr-mobr/index.jsp");
+                    response.sendRedirect(request.getContextPath() + "/root-panel/bobr-mobr/index.jsp");                  
                     return;
-                } else {
+                } 
+                if(userLogin.equals(login) == false && userPassword.equals(password) == false) {
                     response.sendRedirect(request.getContextPath() + "/root-panel/error.jsp");
-                    //response.sendRedirect("http://localhost:8084/MENU/root-panel/error.jsp");
                    return;
                 }
             }

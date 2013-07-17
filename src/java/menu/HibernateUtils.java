@@ -292,4 +292,24 @@ public class HibernateUtils {
       }
         return "Пользователь успешно удален!";
    } 
+
+public String updateUser(int id, String login,
+                             String password){
+      Session session2 = HibernateUtils.getSessionFactoryInstance().openSession();
+      Transaction tx = null;
+      try{
+         tx = session2.beginTransaction();
+         User user = (User)session2.get(User.class, id); 
+         user.setLogin(login);
+         user.setPassword(password);
+		 session2.update(user); 
+         tx.commit();
+      }catch (HibernateException e) {
+         if (tx!=null) tx.rollback();
+         e.printStackTrace(); 
+      }finally {
+         session2.close(); 
+      }
+        return "Успешно отредактировано!";
+   }
 }

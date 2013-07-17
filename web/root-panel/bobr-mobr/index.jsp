@@ -20,7 +20,7 @@
 
 <html lang="en" class="no-js">
     <head> 
-        <title>Панель администратора | Ресторан "Бобо-Мобр"</title>
+        <title>Панель администратора | Ресторан "Бобр-Мобр"</title>
         <link rel="stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">           
 	<link rel="stylesheet" type="text/css" href="css/default.css" />
