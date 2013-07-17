@@ -23,33 +23,43 @@
 
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr.custom.js"></script>
+                <script src="js/jquery.js"></script>
+                <script src="js/popup.js"></script>
+
+
+
 	</head>
 	<body>
 		<div class="container">	
+                    <div id="dialog-overlay"></div>
+                    <div id="dialog-box">
+                        <div class="dialog-content">
+                            <div style="float:right;" ><span class="bl-icon bl-icon-close"></span></div>
+                            <div id="dialog-message"></div>
+                            
+                        </div>
+                    </div>
 			<div id="bl-main" class="bl-main">
 				<section>
 					<div class="bl-box">
 						<h2 class="bl-icon bl-icon-about">Закуски</h2>
 					</div>
     <div class="bl-content">
-
+         <div id='basic-modal'>
          <%   
             String cat = "Закуски";
             List<Item> listItems = hbUtils.getItemCategoryList(cat);
             for (Item i : listItems) {
-                out.println ("<a href=\"http://localhost:8080/MENU/AddPack?"
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "&itemCategory=" + i.getItemCategory()
-                        + "\"><div class =\"item\">");
+                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"')\"><div class =\"item\">");
                 out.println("<br>" + i.toStringItem(i));
               
                 out.println ("</div></a>");
                  
             }
             
-%>
+%>     
+         </div>
+
     </div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -63,12 +73,7 @@
             String cat2 = "Выпечка";
             List<Item> listItems2 = hbUtils.getItemCategoryList(cat2);
             for (Item i : listItems2) {
-                out.println ("<a href=\"http://localhost:8080/MENU/AddPack?"
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "&itemCategory=" + i.getItemCategory()
-                        + "\"><div class =\"item\">");
+                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"')\"><div class =\"item\">");
                 out.println("<br>" + i.toStringItem(i));
               
                 out.println ("</div></a>");
@@ -81,19 +86,14 @@
 				</section>
 				<section>
 					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-blog">Вторые блюда</h2>
+						<h2 class="bl-icon bl-icon-blog">Первые блюда</h2>
 					</div>
     <div class="bl-content">
              <%   
-            String cat3 = "Вторые блюда";
+            String cat3 = "Первые блюда";
             List<Item> listItems3 = hbUtils.getItemCategoryList(cat3);
             for (Item i : listItems3) {
-                out.println ("<a href=\"http://localhost:8080/MENU/AddPack?"
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "&itemCategory=" + i.getItemCategory()
-                        + "\"><div class =\"item\">");
+                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"')\"><div class =\"item\">");
                 out.println("<br>" + i.toStringItem(i));
               
                 out.println ("</div></a>");
