@@ -54,8 +54,8 @@ a:hover {
 
 .bl-main > section {
 	position: absolute;
-	width: 50%;
-	height: 33%;
+	width: 33%;
+	height: 50%;
 }
 
 .bl-main > section:first-child {
