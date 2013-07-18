@@ -20,11 +20,14 @@ body, html { font-size: 100%; padding: 0; margin: 0; }
 .clearfix:after { clear: both; }
 
 body {
+    	margin: 0 auto;
+	padding: 2em;
+    width:85%;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
-	color: #fff;
-	background: #e74c3c;
+	color: #4D4B4B;
+background-image: url("bg.jpg");
+background-attachment: fixed;
 }
-
 a {
 	color: #c0392b;
 	text-decoration: none;
@@ -141,16 +144,15 @@ a:active {
 button {
 	border: none;
 	padding: 0.6em 1.2em;
-	background: #c0392b;
+        background: rgba(121, 151, 121, 0.506);
 	color: #fff;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 	font-size: 1em;
 	letter-spacing: 1px;
-	text-transform: uppercase;
 	cursor: pointer;
 	display: inline-block;
 	margin: 3px 2px;
-	border-radius: 2px;
+        border-radius: 9px 9px 9px 9px;
 }
 
 button:hover {

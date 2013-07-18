@@ -107,7 +107,7 @@ function start(){
             </div>
         </div>
                             
-                            
+                                    <div class="content">   <div class="in-content">                   
         <h2>Ваше меню:</h2>
          <%
   List <Category> listCat2 = hbUtils.getCategoryList();
@@ -121,15 +121,8 @@ function start(){
                    out.println ("Тут пусто :(");
                }
                  for (Item i2 : listItems) {
-                out.println (" <div id=\"container_buttons\">");
+                out.println ("<div id=\"container_buttons\">");
                 out.println("<br>" + i2.toStringItem(i2));
-                
-                /*out.println("<br><a href=\"http://localhost:8080/MENU/DemoAddPack?"
-                        + "&itemTitle=" + i.getItemTitle()
-                        + "&itemDesc=" + i.getItemDesc()
-                        + "&itemCost=" + i.getItemCost()
-                        + "&itemCost=" + i.getItemCategory()
-                        + "\">Добавить в корзину</a> (Эта кнопка в меню для посетителей)<br> ");*/
 
                 out.println("<br><a href=\"http://localhost:8080/MENU/DemoUpdate.jsp?"
                         + "itemID=" + i2.getItemID()
@@ -146,6 +139,7 @@ function start(){
             }
                  }
  %>
+                                    </div></div>
 		<div class="md-overlay"></div><!-- the overlay element -->
 		<script src="js/classie.js"></script>
 		<script src="js/modalEffects.js"></script>

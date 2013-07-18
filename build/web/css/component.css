@@ -54,7 +54,7 @@ a:hover {
 
 .bl-main > section {
 	position: absolute;
-	width: 50%;
+	width: 33%;
 	height: 50%;
 }
 
@@ -66,7 +66,7 @@ a:hover {
 
 .bl-main > section:nth-child(2) {
 	top: 0;
-	left: 50%;
+	left: 33%;
 	background: #FA987D;
 }
 
@@ -78,7 +78,17 @@ a:hover {
 
 .bl-main > section:nth-child(4) {
 	top: 50%;
-	left: 50%;
+	left: 33%;
+	background: #10A296;
+}
+.bl-main > section:nth-child(5) {
+	top: 0%;
+	left: 66%;
+	background: #10A296;
+}
+.bl-main > section:nth-child(6) {
+	top: 50%;
+	left: 66%;
 	background: #10A296;
 }
 
