@@ -40,80 +40,108 @@
                         </div>
                     </div>
 			<div id="bl-main" class="bl-main">
-				<section>
-					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-about">Закуски</h2>
-					</div>
-    <div class="bl-content">
-         <div id='basic-modal'>
-         <%   
-            String cat = "Закуски";
-            List<Item> listItems = hbUtils.getItemCategoryList(cat);
-            for (Item i : listItems) {
-                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"')\"><div class =\"item\">");
-                out.println("<br>" + i.toStringItem(i));
-              
-                out.println ("</div></a>");
-                 
-            }
-            
+                            <section>
+                                <div class="bl-box">
+                                    <h2 class="bl-icon bl-icon-about">Закуски</h2>
+                                </div>
+                                <div class="bl-content">
+<%
+    String cat = "Закуски";
+    List<Item> listItems = hbUtils.getItemCategoryList(cat);
+    for (Item i : listItems) {
+        out.println("<a class=\"basic\" href=\"javascript:popup('" + i.toStringItem(i) + "')\"><div class =\"item\">");
+        out.println("<br>" + i.toStringItem(i));
+        out.println("</div></a>");
+    }
 %>     
-         </div>
-
-    </div>
-					<span class="bl-icon bl-icon-close"></span>
-				</section>
-				<section id="bl-work-section">
-					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-works">Выпечка</h2>
-					</div>
-    <div class="bl-content">
-
-         <%   
-            String cat2 = "Выпечка";
-            List<Item> listItems2 = hbUtils.getItemCategoryList(cat2);
-            for (Item i : listItems2) {
-                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"')\"><div class =\"item\">");
-                out.println("<br>" + i.toStringItem(i));
-              
-                out.println ("</div></a>");
-                 
-            }
-            
+                                </div>
+                                <span class="bl-icon bl-icon-close"></span>
+                            </section>
+                            <section id="bl-work-section">
+                                <div class="bl-box">
+                                    <h2 class="bl-icon bl-icon-works">Десерты</h2>
+                                </div>
+                                <div class="bl-content">
+<%
+    String cat2 = "Десерты";
+    List<Item> listItems2 = hbUtils.getItemCategoryList(cat2);
+    for (Item i : listItems2) {
+        out.println("<a class=\"basic\" href=\"javascript:popup('" + i.toStringItem(i) + "')\"><div class =\"item\">");
+        out.println("<br>" + i.toStringItem(i));
+        out.println("</div></a>");
+    }
 %>
-    </div>
-					<span class="bl-icon bl-icon-close"></span>
-				</section>
-				<section>
-					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-blog">Первые блюда</h2>
-					</div>
-    <div class="bl-content">
-             <%   
-            String cat3 = "Первые блюда";
-            List<Item> listItems3 = hbUtils.getItemCategoryList(cat3);
-            for (Item i : listItems3) {
-                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"')\"><div class =\"item\">");
-                out.println("<br>" + i.toStringItem(i));
-              
-                out.println ("</div></a>");
-                 
-            }
-            
+                                </div>
+                                <span class="bl-icon bl-icon-close"></span>
+                            </section>
+                            <section>
+                                <div class="bl-box">
+                                    <h2 class="bl-icon bl-icon-blog">Первые блюда</h2>
+                                </div>
+                                <div class="bl-content">
+<%
+    String cat3 = "Первые блюда";
+    List<Item> listItems3 = hbUtils.getItemCategoryList(cat3);
+    for (Item i : listItems3) {
+        out.println("<a class=\"basic\" href=\"javascript:popup('" + i.toStringItem(i) + "')\"><div class =\"item\">");
+        out.println("<br>" + i.toStringItem(i));
+        out.println("</div></a>");
+    }
 %>
-    </div>
-					<span class="bl-icon bl-icon-close"></span>
-				</section>
-				<section>
-					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-contact">Contact</h2>
-					</div>
-     <div class="bl-content">
-    
-     </div>
-					<span class="bl-icon bl-icon-close"></span>
-				</section>
-		
+                                </div>
+                                <span class="bl-icon bl-icon-close"></span>
+                            </section>
+                            <section>
+                                <div class="bl-box">
+                                    <h2 class="bl-icon bl-icon-contact">Вторые блюда</h2>
+                                </div>
+                                <div class="bl-content">
+<%
+    String cat4 = "Первые блюда";
+    List<Item> listItems4 = hbUtils.getItemCategoryList(cat4);
+    for (Item i : listItems4) {
+        out.println("<a class=\"basic\" href=\"javascript:popup('" + i.toStringItem(i) + "')\"><div class =\"item\">");
+        out.println("<br>" + i.toStringItem(i));
+        out.println("</div></a>");
+    }
+%>
+                                </div>
+                                <span class="bl-icon bl-icon-close"></span>
+                            </section>
+                            <section>
+                                <div class="bl-box">
+                                    <h2 class="bl-icon bl-icon-cat5">Напитки</h2>
+                                </div>
+                                <div class="bl-content">
+<%
+    String cat5 = "Напитки";
+    List<Item> listItems5 = hbUtils.getItemCategoryList(cat5);
+    for (Item i : listItems5) {
+        out.println("<a class=\"basic\" href=\"javascript:popup('" + i.toStringItem(i) + "')\"><div class =\"item\">");
+        out.println("<br>" + i.toStringItem(i));
+        out.println("</div></a>");
+    }
+%>
+                                </div>
+                                <span class="bl-icon bl-icon-close"></span>
+                            </section>
+                            <section>
+                                <div class="bl-box">
+                                    <h2 class="bl-icon bl-icon-cat6">Выпечка</h2>
+                                </div>
+                                <div class="bl-content">
+<%
+    String cat6 = "Выпечка";
+    List<Item> listItems6 = hbUtils.getItemCategoryList(cat6);
+    for (Item i : listItems6) {
+        out.println("<a class=\"basic\" href=\"javascript:popup('" + i.toStringItem(i) + "')\"><div class =\"item\">");
+        out.println("<br>" + i.toStringItem(i));
+        out.println("</div></a>");
+    }
+%>
+                                </div>
+                                <span class="bl-icon bl-icon-close"></span>
+                            </section>
 			</div>
 		</div><!-- /container -->
 		<script src="js/jquery.min.js"></script>

@@ -55,7 +55,7 @@ a:hover {
 .bl-main > section {
 	position: absolute;
 	width: 50%;
-	height: 50%;
+	height: 33%;
 }
 
 .bl-main > section:first-child {
@@ -66,20 +66,32 @@ a:hover {
 
 .bl-main > section:nth-child(2) {
 	top: 0;
-	left: 50%;
+	left: 33%;
 	background: #FA987D;
 }
 
 .bl-main > section:nth-child(3) {
-	top: 50%;
-	left: 0;
+	top: 0;
+	left: 66%;
 	background: #72CCA7;
 }
 
 .bl-main > section:nth-child(4) {
 	top: 50%;
-	left: 50%;
+	left: 0;
 	background: #10A296;
+}
+
+.bl-main > section:nth-child(5) {
+	top: 50%;
+	left: 33%;
+	background: #10F296;
+}
+
+.bl-main > section:nth-child(6) {
+	top: 50%;
+	left: 66%;
+	background: #A0FF96;
 }
 
 .bl-box {
@@ -155,6 +167,14 @@ a:hover {
 
 .bl-icon-contact:before {
 	
+}
+
+.bl-icon-cat6:before {
+
+}
+
+.bl-icon-cat6:before {
+
 }
 
 .bl-main > section .bl-icon-close {
@@ -382,6 +402,12 @@ div.bl-panel-items > div.bl-hide-current-work {
 }
 .bl-main > section:nth-child(4).bl-expand {
 	background: #0D8278;
+}
+.bl-main > section:nth-child(5).bl-expand {
+	background: #10F296;
+}
+.bl-main > section:nth-child(6).bl-expand {
+	background: #A0FF96;
 }
 
 .bl-main.bl-expand-item > section:not(.bl-expand),

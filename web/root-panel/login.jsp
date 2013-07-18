@@ -14,8 +14,8 @@
             <section class="login">
                 <h1>Панель адинистратора</h1>
                 <form action="" id="myform">
-                    <p><input type="text" name="login" id="login" /></p>
-                    <p><input type="password" name="password" id="password" /></p>
+                    <p><input type="text" name="login" id="login" placeholder="Input LOGIN"/></p>
+                    <p><input type="password" name="password" id="password" placeholder="Input PASSWORD"/></p>
 
                     <div id="result"></div>
                     <!--
