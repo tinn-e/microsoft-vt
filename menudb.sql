@@ -22,6 +22,7 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `menudb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `menudb`;
 
+
 -- --------------------------------------------------------
 
 --
@@ -33,7 +34,8 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+  KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Очистить таблицу перед добавлением данных `categories`
@@ -45,14 +47,13 @@ TRUNCATE TABLE `categories`;
 --
 
 INSERT INTO `categories` (`id`, `categoryName`) VALUES
-(18, 'Закуски'),
-(19, 'Первые блюда'),
-(20, 'Вторые блюда'),
-(21, 'Десерты'),
-(22, 'Выпечка');
+(1, 'Закуски'),
+(2, 'Первые блюда'),
+(3, 'Вторые блюда'),
+(4, 'Десерты'),
+(5, 'Выпечка');
 
 -- --------------------------------------------------------
-
 --
 -- Структура таблицы `items`
 --
@@ -77,8 +78,8 @@ TRUNCATE TABLE `items`;
 --
 
 INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
-(86, 'Суп гороховый', 'Вкусный', 100, 'Первые блюда'),
-(87, 'ййй', 'ццц', 3333, 'Закуски');
+(1, 'Суп гороховый', 'Вкусный', 100, 'Первые блюда'),
+(2, 'Шаурма', 'Кабиценская', 333, 'Закуски');
 
 -- --------------------------------------------------------
 
