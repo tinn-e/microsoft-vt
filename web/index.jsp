@@ -1,5 +1,4 @@
 
-
 <%@page import="java.util.List"%>
 <%@page import="menu.Item"%>
 <%@page import="menu.HibernateUtils"%>
@@ -107,6 +106,24 @@
 				<section>
 					<div class="bl-box">
 						<h2 class="bl-icon bl-icon-contact">Contact</h2>
+					</div>
+     <div class="bl-content">
+    
+     </div>
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				<section>
+					<div class="bl-box">
+						<h2 class="bl-icon bl-icon-contact">EmptyBox</h2>
+					</div>
+     <div class="bl-content">
+    
+     </div>
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				<section>
+					<div class="bl-box">
+						<h2 class="bl-icon bl-icon-contact">EmptyBox</h2>
 					</div>
      <div class="bl-content">
     
