@@ -4,18 +4,19 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import menu.HibernateUtils;
 import menu.User;
 
-@WebServlet(name = "AuthorizationServlet", urlPatterns = {"/AuthorizationServlet"})
-public class AuthorizationServlet extends HttpServlet {
+public class AuthServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        request.setCharacterEncoding("utf-8");
 
         try {
             HibernateUtils.getSessionFactoryInstance();
@@ -23,31 +24,38 @@ public class AuthorizationServlet extends HttpServlet {
             System.err.println("Failed to create sessionFactory object." + ex);
             throw new ExceptionInInitializerError(ex);
         }
-
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
         HibernateUtils hibernateUtils = new HibernateUtils();
         
             String login = request.getParameter("login");
             String password = request.getParameter("password");
-            String userLogin = null;
-            String userPassword = null;           
+            String userLogin,userPassword = null;  
+            int fail = 0;
+            
+        try {
             List<User> list = hibernateUtils.getUserList();
-            for (User i : list) {
-                userLogin = i.getLogin();
-                userPassword = i.getPassword();
+                for (User i : list) {
+                    userLogin = i.getLogin();
+                    userPassword = i.getPassword();
 
-                if (userLogin.equals(login) == true && userPassword.equals(password) == true) {
-                    response.sendRedirect(request.getContextPath() + "/root-panel/bobr-mobr/index.jsp");                  
-                    return;
-                } 
-                if(userLogin.equals(login) == false && userPassword.equals(password) == false) {
-                    response.sendRedirect(request.getContextPath() + "/root-panel/error.jsp");
-                   return;
+                    if (userLogin.equals(login) == true && userPassword.equals(password) == true) {
+                       // fail = 10;
+                        out.println("<script language = 'javascript'>var delay = 0;"
+                                + " setTimeout(\"document.location.href='/microsoft-vt/root-panel/bobr-mobr/index.jsp'\", delay);</script>");
+                        break;
+                    } else {
+                        fail=fail +0;
+                    }
                 }
-            }
-    }
 
+            if (fail == 0) {
+                out.println("<center><font color=\"#FF0000\">Неправильная пара логин-пароль!<br>"
+                        + "Авторизоваться не удалось.</font></center>");
+            }
+
+        } finally {
+            out.close();
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP
