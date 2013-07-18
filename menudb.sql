@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
