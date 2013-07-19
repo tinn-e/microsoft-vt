@@ -88,6 +88,7 @@ perspective effects (not including the modals and the overlay).
 }
 
 .md-content > div {
+            border-radius: 30px 30px 30px 30px;
 	padding: 15px 40px 30px;
 	margin: 0;
 	font-weight: 300;
@@ -260,6 +261,7 @@ perspective effects (not including the modals and the overlay).
 
 /* Effect 7:  slide and stick to top */
 .md-effect-7{
+        border-radius: 30px 30px 30px 30px;
 	top: 0;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);

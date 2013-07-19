@@ -158,7 +158,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("                            \n");
-      out.write("                                    <div class=\"content\">                    \n");
+      out.write("                                    <div class=\"content\">   <div class=\"in-content\">                   \n");
       out.write("        <h2>Ваше меню:</h2>\n");
       out.write("         ");
 
@@ -192,7 +192,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
                  }
  
       out.write("\n");
-      out.write("                                    </div>\n");
+      out.write("                                    </div></div>\n");
       out.write("\t\t<div class=\"md-overlay\"></div><!-- the overlay element -->\n");
       out.write("\t\t<script src=\"js/classie.js\"></script>\n");
       out.write("\t\t<script src=\"js/modalEffects.js\"></script>\n");
