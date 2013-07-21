@@ -12,5 +12,6 @@
       <property name="itemDesc" column="prodDesc" type="string"/>
       <property name="itemCost" column="prodCost" type="int"/>
       <property name="itemCategory" column="prodCategory" type="string"/>
+      <property name="itemImage" column="prodImg" type="string"/>
    </class>
 </hibernate-mapping>

@@ -33,7 +33,7 @@
                     <div id="dialog-overlay"></div>
                     <div id="dialog-box">
                         <div class="dialog-content">
-                            <div style="float:right;" ><span class="bl-icon bl-icon-close"></span></div>
+                            <div id="closepop" style="float:right;" ><span class="bl-icon bl-icon-close"></span></div>
                             <div id="dialog-message"></div>
                             
                         </div>
@@ -49,9 +49,9 @@
             String cat = "Закуски";
             List<Item> listItems = hbUtils.getItemCategoryList(cat);
             for (Item i : listItems) {
-                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"')\"><div class =\"item\">");
-                out.println("<br>" + i.toStringItem(i));
-              
+                out.println ("<a class=\"basic\" href=\"javascript:popup('"+ i.toStringItem(i)+"<a href="+"AddPack?itemTitle=уцк&itemDesc=234&itemCost=234&itemCategory=4643"+">Заказать</a>"+"')\"><div class =\"item\">");
+                out.println("<br>" + i.toStringItem(i)+"<br>");
+                out.println("<img style=\"border-radius:10px;\" src=\"http://localhost:8080/microsoft-vt/images/1.jpg\" />");
                 out.println ("</div></a>");
                  
             }

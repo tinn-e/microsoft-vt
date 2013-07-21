@@ -7,6 +7,7 @@ public class Item {
     private String itemDesc;
     private int itemCost;
     public String itemCategory;
+    public String itemImage;
     private int markOfUser = 0;
     private int valueOfMarks = 0;
     private double ratingOfItem = 0.0;
@@ -39,11 +40,12 @@ public class Item {
     public Item() {
     }
 
-    public Item(String title, String desc, int cost, String category) {
+    public Item(String title, String desc, int cost, String category, String image) {
         this.itemTitle = title;
         this.itemDesc = desc;
         this.itemCost = cost;
         this.itemCategory = category;
+        this.itemImage = image;
     }
 
     public int getItemID() {
@@ -61,7 +63,14 @@ public class Item {
     public void setItemTitle(String title) {
         this.itemTitle = title;
     }
+    public String getItemImage() {
+        return itemTitle;
+    }
 
+    public void setItemImage(String image) {
+        this.itemTitle = image;
+    }
+    
     public String getItemDesc() {
         return itemDesc;
     }
@@ -100,6 +109,10 @@ public class Item {
     
     public String printItemCategory(Item item){
         return "<b>Категория:</b> " + item.getItemCategory();
+    }
+    
+    public String printItemImage(Item item){
+        return "<b>Фото:</b> " + item.getItemImage();
     }
 
     public String toStringItem(Item item) {

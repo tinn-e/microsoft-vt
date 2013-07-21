@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
         // if user clicked on button, the overlay layer or the dialogbox, close the dialog	
-        $('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {		
+        $('a.btn-ok, #dialog-overlay, #closepop').click(function () {		
                 $('#dialog-overlay, #dialog-box').hide();		
                 return false;
         });
@@ -37,3 +37,11 @@ function popup(message) {
 
                     }
 
+function addpack() {
+$.ajax({
+  url: 'http://localhost:8080/microsoft-vt/AddPack?itemTitle=ggggg&itemDesc=234&itemCost=234&itemCategory=4643',
+  success: function(){
+    alert('Load was performed.');
+  }
+});
+}

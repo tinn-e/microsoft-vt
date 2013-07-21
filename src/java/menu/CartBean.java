@@ -9,8 +9,8 @@ public class CartBean {
 
     private List<Item> cartShop = new ArrayList<Item>();
 
-    public synchronized void addItem(String itemTitle, String itemDesc, int itemCost, String itemCategory) {
-        Item item = new Item(itemTitle, itemDesc, itemCost, itemCategory);
+    public synchronized void addItem(String itemTitle, String itemDesc, int itemCost, String itemCategory, String itemImage) {
+        Item item = new Item(itemTitle, itemDesc, itemCost, itemCategory, itemImage);
         cartShop.add(item);
     }
 

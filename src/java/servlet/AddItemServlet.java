@@ -47,10 +47,11 @@ public class AddItemServlet extends HttpServlet {
         String itemDesc = request.getParameter("itemDesc");        
         String itemCost = request.getParameter("itemCost"); 
         String itemCategoty = request.getParameter("itemCategoty"); 
+        String itemImage = request.getParameter("itemImage"); 
         int i_itemCost = Integer.parseInt(itemCost);
         
         HibernateUtils hbUtils = new HibernateUtils();
-        Item item = new Item(itemTitle, itemDesc, i_itemCost, itemCategoty);
+        Item item = new Item(itemTitle, itemDesc, i_itemCost, itemCategoty, itemImage);
         hbUtils.addItem(item);
         try {
             

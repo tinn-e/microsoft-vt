@@ -50,7 +50,7 @@ INSERT INTO `categories` (`id`, `categoryName`) VALUES
 (2, 'Первые блюда'),
 (3, 'Вторые блюда'),
 (4, 'Десерты'),
-(5, 'Выпечка');
+(5, 'Напитки');
 
 -- --------------------------------------------------------
 --
@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `prodDesc` varchar(250) DEFAULT NULL,
   `prodCost` int(11) DEFAULT NULL,
   `prodCategory` varchar(100) NOT NULL,
+    `prodImg` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100 ;
 
@@ -76,9 +77,9 @@ TRUNCATE TABLE `items`;
 -- Дамп данных таблицы `items`
 --
 
-INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
-(1, 'Суп гороховый', 'Вкусный', 100, 'Первые блюда'),
-(2, 'Шаурма', 'Кабиценская', 333, 'Закуски');
+INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`, `prodImg`) VALUES
+(1, 'Суп гороховый', 'Вкусный', 100, 'Первые блюда', '1.jpg'),
+(2, 'Шаурма', 'Кабиценская', 333, 'Закуски', '1.jpg');
 
 -- --------------------------------------------------------
 
