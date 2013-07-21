@@ -37,11 +37,11 @@ function popup(message) {
 
                     }
 
-function addpack() {
+function addpack(s) {
 $.ajax({
-  url: 'http://localhost:8080/microsoft-vt/AddPack?itemTitle=ggggg&itemDesc=234&itemCost=234&itemCategory=4643',
+  url: 'http://localhost:8080/microsoft-vt/AddPack?itemTitle=' + (s) +'ggggg&itemDesc=234&itemCost=234&itemCategory=4643',
   success: function(){
-    alert('Load was performed.');
+    alert('Добавлено');
   }
 });
 }

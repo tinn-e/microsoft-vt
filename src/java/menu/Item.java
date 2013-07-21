@@ -119,6 +119,11 @@ public class Item {
         return printItemTitle(item) + "<br>" + printItemDesc(item) + "<br>" + printItemCost(item) 
                 + "<br>" + printItemCategory(item);
     }
+    
+    public String toUrlforCart(Item item) {
+        return "itemTitle=" + item.getItemDesc() + "&itemDesc=" + item.getItemDesc() + "&itemCost=" + item.getItemCost() 
+                + "&itemCategory=" + item.getItemCategory();
+    }
 
     public boolean equals(Item obj) {
         if (obj == null)
