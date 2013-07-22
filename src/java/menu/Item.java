@@ -64,11 +64,11 @@ public class Item {
         this.itemTitle = title;
     }
     public String getItemImage() {
-        return itemTitle;
+        return itemImage;
     }
 
     public void setItemImage(String image) {
-        this.itemTitle = image;
+        this.itemImage = image;
     }
     
     public String getItemDesc() {

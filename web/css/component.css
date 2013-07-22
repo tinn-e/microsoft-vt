@@ -61,35 +61,56 @@ a:hover {
 .bl-main > section:first-child {
 	top: 0;
 	left: 0;
-	background: #F06060;
+        background: #EE4444;
+ 
+    background-image: url(../icons/zakys.jpg);
+    background-size: cover;
+    
 }
 
 .bl-main > section:nth-child(2) {
 	top: 0;
 	left: 33%;
 	background: #FA987D;
+    background-image: url(../icons/dessert.jpg);
+    background-size: cover;
 }
 
 .bl-main > section:nth-child(3) {
-	top: 50%;
-	left: 0;
+	top: 0;
+	left: 66%;
 	background: #72CCA7;
+    
+    background-size: cover;
+    
+    background-image: url(../icons/first.jpg);
 }
 
 .bl-main > section:nth-child(4) {
 	top: 50%;
-	left: 33%;
+	left: 0;
 	background: #10A296;
+    
+    background-size: cover;
+    
+    background-image: url(../icons/two.jpg);
 }
+
 .bl-main > section:nth-child(5) {
-	top: 0%;
-	left: 66%;
-	background: #10A296;
+	top: 50%;
+	left: 33%;
+	background: #10F296;
+    
+    background-size: cover;
+    background-image: url(../icons/drink.jpg);
 }
+
 .bl-main > section:nth-child(6) {
 	top: 50%;
 	left: 66%;
-	background: #10A296;
+	background: #A0FF96;
+    background-image: url(../icons/cake.jpg);
+    background-size: cover;
 }
 
 .bl-box {
@@ -134,6 +155,8 @@ a:hover {
 }
 
 .bl-icon {
+        background-color:rgba(255,0,0,0.3);
+        color: white;
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -146,12 +169,17 @@ a:hover {
 }
 
 .bl-icon:before {
+        
 	display: block;
 	font-size: 2em;
 	margin-bottom: 10px;
 }
 
 .bl-icon-about:before {
+    background-color:rgba(255,0,0,0.3);
+        color: white;
+        
+    
 
 }
 
@@ -165,6 +193,14 @@ a:hover {
 
 .bl-icon-contact:before {
 	
+}
+
+.bl-icon-cat6:before {
+
+}
+
+.bl-icon-cat6:before {
+
 }
 
 .bl-main > section .bl-icon-close {
@@ -383,15 +419,27 @@ div.bl-panel-items > div.bl-hide-current-work {
 
 .bl-main > section:first-child.bl-expand {
 	background: #EE4444;
+    background-image: url(../icons/fon.jpg);
 }
 .bl-main > section:nth-child(2).bl-expand {
 	background: #F98262;
+    background-image: url(../icons/fon.jpg);
 }
 .bl-main > section:nth-child(3).bl-expand {
 	background: #4BBE8E;
+    background-image: url(../icons/fon.jpg);
 }
 .bl-main > section:nth-child(4).bl-expand {
 	background: #0D8278;
+    background-image: url(../icons/fon.jpg);
+}
+.bl-main > section:nth-child(5).bl-expand {
+	background: #10F296;
+    background-image: url(../icons/fon.jpg);
+}
+.bl-main > section:nth-child(6).bl-expand {
+	background: #A0FF96;
+    background-image: url(../icons/fon.jpg);
 }
 
 .bl-main.bl-expand-item > section:not(.bl-expand),

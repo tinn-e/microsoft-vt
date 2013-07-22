@@ -45,3 +45,18 @@ $.ajax({
   }
 });
 }
+
+function ololo() {
+ 
+ $.ajax({
+  
+  url: 'http://localhost:8080/microsoft-vt/HbSession',
+  dataType: 'json',
+  success: function(response){
+      var hh = response;
+      var obj = $.parseJSON("'"+response+"'");
+    $("#co").html("'"+response+"'");
+   
+  }
+});
+}
