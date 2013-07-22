@@ -1,5 +1,4 @@
 
-
 <%@page import="java.util.List"%>
 <%@page import="menu.Item"%>
 <%@page import="menu.HibernateUtils"%>
@@ -52,7 +51,7 @@
     for (Item i : listItems) {
         out.println("<a class=\"basic\" href=\"javascript:popup('" + i.toStringItem(i) + "')\"><div class =\"item\">");
         out.println("<br>" + i.toStringItem(i));
-        out.println("</div></a><a href=javascript:ololo()>mbmb</a><div style=\"width=100px;\" id=\"co\"></div>");
+        out.println("</div></a>");
     }
 %>     
                                 </div>
