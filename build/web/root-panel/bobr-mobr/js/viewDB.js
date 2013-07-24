@@ -31,7 +31,7 @@ function DataBaseUtil(){
                 $('<div id="container_buttons"><div id="item">\n\
                         <b>Название: </b>'+val.itemTitle+'<br>\n\
                         <b>Описание: </b>'+val.itemDesc +'<br>\n\
-                        <b>Цена: </b>'+ val.itemCost+'<br>\n\
+                        <b>Цена: </b>'+ val.itemCost+' руб<br>\n\
                         <b>Категория: </b>'+val.itemCategory+'<br> </div></div>').appendTo('#0'+i_id); 
         
             /* проверка на существование селектора
