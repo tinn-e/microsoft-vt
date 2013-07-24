@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://xn--2-7sbap2amif.xn--j1aoae.xn--p1ai:8080/MENU/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="menu.User" table="users">
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="login" column="login" type="string"/>
+      <property name="password" column="password" type="string"/>
+   </class>
+</hibernate-mapping>

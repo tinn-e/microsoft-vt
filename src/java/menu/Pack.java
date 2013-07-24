@@ -8,8 +8,8 @@ public class Pack {
     public ArrayList<Item> ListPack = new ArrayList<Item>();
     public Pack(){}
 
-    public void AddToListPack(String itemTitle, String itemDesc, int itemCost, String itemCategory, String itemImage) {
-        Item item = new Item(itemTitle, itemDesc, itemCost, itemCategory, itemImage);
+    public void AddToListPack(String itemTitle, String itemDesc, int itemCost, String itemCategory) {
+        Item item = new Item(itemTitle, itemDesc, itemCost, itemCategory);
         this.ListPack.add(item);
     }
 

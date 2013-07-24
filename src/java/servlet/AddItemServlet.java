@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlet;
 
 import java.io.IOException;
@@ -12,52 +8,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import menu.HibernateUtils;
 import menu.Item;
+import org.json.simple.JSONObject;
 
-/**
- *
- * @author Admin
- */
 public class AddItemServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP
-     * <code>GET</code> and
-     * <code>POST</code> methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-                     try{
+        request.setCharacterEncoding("utf-8");
+        try{
         HibernateUtils.getSessionFactoryInstance();
         
-      }catch (Throwable ex) { 
+        }catch (Throwable ex) { 
          System.err.println("Failed to create sessionFactory object." + ex);
          throw new ExceptionInInitializerError(ex); 
-      }       
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=UTF-8");
-
+        }
         String itemTitle = request.getParameter("itemTitle");
-        String itemDesc = request.getParameter("itemDesc");        
-        String itemCost = request.getParameter("itemCost"); 
-        String itemCategoty = request.getParameter("itemCategoty"); 
-        String itemImage = request.getParameter("itemImage"); 
-        int i_itemCost = Integer.parseInt(itemCost);
+        String itemDesc = request.getParameter("itemDesc");   
+
+        String itemCategory = request.getParameter("itemCategory"); 
+        Integer itemCost = Integer.parseInt(request.getParameter("itemCost")); 
+
         
         HibernateUtils hbUtils = new HibernateUtils();
-        Item item = new Item(itemTitle, itemDesc, i_itemCost, itemCategoty, itemImage);
+        Item item = new Item(itemTitle, itemDesc, itemCost, itemCategory);
         hbUtils.addItem(item);
         try {
-            
-            out.println("<h1>Добавлено!</h1>");
-            out.println(item.toStringItem(item));
-
+        JSONObject resultJson = new JSONObject();
+        resultJson.put("res", "ok");    
+        out.println(resultJson);       
+         
         } finally {            
             out.close();
         }

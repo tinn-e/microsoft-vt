@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 16 2013 г., 22:24
+-- Время создания: Июл 24 2013 г., 07:55
 -- Версия сервера: 5.5.32
 -- Версия PHP: 5.4.16
 
@@ -22,7 +22,6 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `menudb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `menudb`;
 
-
 -- --------------------------------------------------------
 
 --
@@ -34,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Очистить таблицу перед добавлением данных `categories`
@@ -47,12 +46,18 @@ TRUNCATE TABLE `categories`;
 
 INSERT INTO `categories` (`id`, `categoryName`) VALUES
 (1, 'Закуски'),
-(2, 'Первые блюда'),
-(3, 'Вторые блюда'),
-(4, 'Десерты'),
-(5, 'Напитки');
+(2, 'Десерты'),
+(3, 'Первые блюда'),
+(4, 'qqqq'),
+(5, 'ddd'),
+(6, 'ссс'),
+(7, 'ммм'),
+(8, 'Кофе'),
+(9, 'qqq'),
+(10, 'смав');
 
 -- --------------------------------------------------------
+
 --
 -- Структура таблицы `items`
 --
@@ -64,9 +69,8 @@ CREATE TABLE IF NOT EXISTS `items` (
   `prodDesc` varchar(250) DEFAULT NULL,
   `prodCost` int(11) DEFAULT NULL,
   `prodCategory` varchar(100) NOT NULL,
-    `prodImg` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Очистить таблицу перед добавлением данных `items`
@@ -77,9 +81,22 @@ TRUNCATE TABLE `items`;
 -- Дамп данных таблицы `items`
 --
 
-INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`, `prodImg`) VALUES
-(1, 'Суп гороховый', 'Вкусный', 100, 'Первые блюда', '1.jpg'),
-(2, 'Шаурма', 'Кабиценская', 333, 'Закуски', '1.jpg');
+INSERT INTO `items` (`id`, `prodTitle`, `prodDesc`, `prodCost`, `prodCategory`) VALUES
+(1, 'Суп', 'Вкусный', 90, 'Закуски'),
+(2, 'Суп2', 'Вкусный2', 80, 'Закуски'),
+(3, 'Шаурма', 'Офигенная', 200, 'Десерты'),
+(11, 'cdfc', 'fr', 22, 'Закуски'),
+(12, 'cdcd', 'cdfcd', 555, 'Десерты'),
+(13, 'ввв', 'амаа', 555, 'Первые блюда'),
+(14, 'aaa', 'aaa', 111, 'Закуски'),
+(15, 'Шаурма2', 'Офигенная2', 202, 'Закуски'),
+(16, 'ааа', 'ааа', 555, 'Закуски'),
+(17, 'sww', 'cdd', 111, 'Закуски'),
+(18, 'aaa', 'sss', 111, 'Закуски'),
+(19, 'Кофе11', 'кофе22', 444, 'Кофе'),
+(20, 'sss', 'ddd', 444, 'qqq'),
+(21, 'сс', 'ввв', 333, 'Закуски'),
+(22, 'qwww', 'sss', 22, 'Закуски');
 
 -- --------------------------------------------------------
 
@@ -94,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Очистить таблицу перед добавлением данных `users`

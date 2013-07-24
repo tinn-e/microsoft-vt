@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package servlet;
 import menu.HibernateUtils;
 import menu.Item;
@@ -19,13 +16,14 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class HbSession extends HttpServlet {
+public class MainServlet extends HttpServlet {
 
     protected String processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ParseException {
-        response.setContentType("text/html;charset=UTF-8");
+                request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
-
+String Category = request.getParameter("cat");
       try{
         HibernateUtils.getSessionFactoryInstance();
         
@@ -35,31 +33,30 @@ public class HbSession extends HttpServlet {
       }
             HibernateUtils hbUtils = new HibernateUtils();
  JSONArray ar = new JSONArray();
-JSONObject obj = new JSONObject();
-JSONObject resultJson = new JSONObject();
+      String cat="Закуски";
 
-ar.add("first");
-ar.add(new Integer(100));
 
-obj.put("title", "two");
-obj.put("cost", "four");
-
-resultJson.put("paramsArray", ar);
-resultJson.put("paramsObj", obj);
-resultJson.put("paramsStr", "some string");
-out.println(obj.toString());          
-
-    String cat = "Закуски";
     List<Item> listItems = hbUtils.getItemCategoryList(cat);
-    for (Item i : listItems) {
-      ar.add(i.getItemTitle());
-      ar.add(i.getItemCost());  
-      ar.add(i.getItemDesc());  
-      ar.add(i.getItemCategory());  
-      ar.add(i.getItemImage());  
-    }
-            
+    JSONObject obj = new JSONObject(); 
+    
+out.print("{\"items\":["); 
+int n = 0;
+for (Item i : listItems) {
+    n++;
+    
+}
 
+    for (Item i : listItems) {
+n--;
+out.print("{\"title"+"\":\""+ i.getItemTitle()+"\",");
+out.print("\"cost"+"\":"+ i.getItemCost()+",");
+out.print("\"category"+"\":\""+ i.getItemCategory()+"\",");
+out.print("\"desc"+"\":\""+ i.getItemDesc()+"\"}");
+if (n!=0){
+    out.print(",");
+}
+    }          
+out.print("],\"orderCompleted\": true}"); 
        return "";
     }
 
@@ -69,7 +66,7 @@ out.println(obj.toString());
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(HbSession.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -88,7 +85,7 @@ out.println(obj.toString());
         try {
             processRequest(request, response);
         } catch (ParseException ex) {
-            Logger.getLogger(HbSession.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

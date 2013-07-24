@@ -20,14 +20,13 @@ public class AddPack extends HttpServlet {
         String itemDesc = request.getParameter("itemDesc");
         Integer itemCost = Integer.parseInt(request.getParameter("itemCost"));
         String itemCategory = request.getParameter("itemCategory");
-        String itemImage = request.getParameter("itemImage");
         response.setContentType("text/html;charset=UTF-8");
   
         HttpSession session = request.getSession();
         CartBean bean = CartBean.get(session);
         for (String value : request.getParameterValues("itemTitle")){
             if (!value.trim().isEmpty()){
-                bean.addItem(value.trim(),itemDesc,itemCost,itemCategory, itemImage);
+                bean.addItem(value.trim(),itemDesc,itemCost,itemCategory);
             }
         }
 

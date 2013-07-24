@@ -13,10 +13,27 @@
                 <script src="js/jquery.js"></script>
                 <script src="js/popup.js"></script>
 
-
-
 	</head>
 	<body>
+            
+                    <div class="md-modal md-effect-7" id="cart">
+            <div class="md-content">
+                <h3>Корзина</h3>
+                <div id="see"> 
+                </div>
+                <div>
+                    
+                    <button class="md-close">Закрыть!</button>
+                </div>
+            </div>
+        </div>
+        <div class="topmenu">
+            <a href="javascript:seepack()"><button class="md-trigger" data-modal="cart">КОРЗИНА</button></a>   
+        </div>    
+            
+            
+            
+            <div id="items"></div>
 		<div class="container">	
                     <div id="dialog-overlay"></div>
                     <div id="dialog-box">
@@ -26,13 +43,15 @@
                             
                         </div>
                     </div>
+                                                                    
 			<div id="bl-main" class="bl-main">
+
                             <section>
-                                <div class="bl-box">
+                                <a href="javascript:openitem(1,'co')"><div class="bl-box">
                                    <h2 class="bl-icon bl-icon-about">ЗАКУСКИ</h2> 
                                     
-                                </div>
-                                <div class="bl-content">
+                                </div></a>
+                                <div id="co" class="bl-content">
     
                                 </div>
                                 <span class="bl-icon bl-icon-close"></span>
@@ -88,9 +107,12 @@
                                 <span class="bl-icon bl-icon-close"></span>
                             </section>
 			</div>
-		</div><!-- /container -->
+                    </div>
+		<!-- /container -->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/boxlayout.js"></script>
+                <script src="js/classie.js"></script>
+                <script src="js/modalEffects.js"></script>
 		<script>
 			$(function() {
 				Boxlayout.init();

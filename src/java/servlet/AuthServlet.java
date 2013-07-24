@@ -40,7 +40,7 @@ public class AuthServlet extends HttpServlet {
                     if (userLogin.equals(login) == true && userPassword.equals(password) == true) {
                         fail = 10;
                         out.println("<script language = 'javascript'>var delay = 0;"
-                                + " setTimeout(\"document.location.href='/microsoft-vt/root-panel/bobr-mobr/index.jsp'\", delay);</script>");
+                                + " setTimeout(\"document.location.href='/microsoft-vt/root-panel/bobr-mobr/index.html'\", delay);</script>");
                         break;
                     } else {
                         fail=fail +0;
