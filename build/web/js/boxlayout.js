@@ -65,6 +65,12 @@ var Boxlayout = (function() {
 					$( this ).off( transEndEventName ).removeClass( 'bl-expand-top' );
 				} );
                         document.getElementById('co').innerHTML = "";
+                        document.getElementById('ca').innerHTML = "";
+                        document.getElementById('cb').innerHTML = "";
+                        document.getElementById('cc').innerHTML = "";
+                        document.getElementById('cd').innerHTML = "";
+                        document.getElementById('ce').innerHTML = "";
+
 				if( !supportTransitions ) {
 					$section.removeClass( 'bl-expand-top' );
 				}

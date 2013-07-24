@@ -32,6 +32,10 @@
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>servlet.MainServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getIP</servlet-name>
+        <servlet-class>servlet.getIP</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddPack</servlet-name>
         <url-pattern>/AddPack</url-pattern>
@@ -59,6 +63,10 @@
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/MainServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getIP</servlet-name>
+        <url-pattern>/getIP</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

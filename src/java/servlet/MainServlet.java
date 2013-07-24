@@ -33,7 +33,25 @@ String Category = request.getParameter("cat");
       }
             HibernateUtils hbUtils = new HibernateUtils();
  JSONArray ar = new JSONArray();
-      String cat="Закуски";
+      String cat="";
+      if ("1".equals(Category)){
+          cat = "Закуски";
+      }
+      if ("2".equals(Category)){
+          cat = "Десерты";
+      }
+      if ("3".equals(Category)){
+          cat = "Первые блюда";
+      }
+      if ("4".equals(Category)){
+          cat = "Вторые блюда";
+      }
+      if ("5".equals(Category)){
+          cat = "Напитки";
+      }
+      if ("6".equals(Category)){
+          cat = "Выпечка";
+      }
 
 
     List<Item> listItems = hbUtils.getItemCategoryList(cat);

@@ -17,7 +17,7 @@ $(document).ready(function () {
 	
 });
 
-function popup(title,cost) {
+function popup(title,cost,desc) {
 		
         // get the screen height and width  
         var maskHeight = $(document).height();
@@ -32,13 +32,13 @@ function popup(title,cost) {
                         $('#dialog-box').css({top: dialogTop, left: dialogLeft}).show();
 
                         // display the message
-                        $('#dialog-message').html('Название: '+title + '<br>Цена: '+cost+'<br><a href=javascript:addpack(\''+cost+'\')>Добавить</a>');
+                        $('#dialog-message').html('Название: '+title + '<br>Цена: '+cost+'<br>Описание: '+desc+'<br><a href=javascript:addpack(\''+cost+'\')>Добавить</a>');
 
                     }
 
 function addpack(s) {
 $.ajax({
-  url: 'http://localhost:8080/microsoft-vt/AddPack?itemTitle=' + (s) +'ggggg&itemDesc=234&itemCost=234&itemCategory=4643',
+  url: 'http://localhost:8080/microsoft-vt/AddPack?itemTitle=' + s +'&itemDesc='+s+'&itemCost='+s+'&itemCategory='+s,
   success: function(){
     alert('Добавлено!');
   }
@@ -64,7 +64,7 @@ var cart = JSON.parse ( art );
 
 
 for (var i in cart.items) {
-    document.getElementById(id).innerHTML += '<a href="javascript:popup(\''+cart.items[i].cost+'\',\''+cart.items[i].title+'\')"><div class ="item">Название: '+cart.items[i].title+'<br>Цена: '+cart.items[i].cost+'<br>Описание:'+cart.items[i].desc+'<br><img src="http://localhost:8080/microsoft-vt/images/'+cart.items[i].image+'"/></div></a>';
+    document.getElementById(id).innerHTML += '<a href="javascript:popup(\''+cart.items[i].title+'\',\''+cart.items[i].cost+'\',\''+cart.items[i].desc+'\')"><div class ="item">Название: '+cart.items[i].title+'<br>Цена: '+cart.items[i].cost+'<br>Описание:'+cart.items[i].desc+'<br></div></a>';
 
 }
     
