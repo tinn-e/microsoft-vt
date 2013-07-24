@@ -1,0 +1,70 @@
+
+
+#container_buttons{
+ float: left; 
+    width:48%;
+    background-color: rgba(255, 255, 255, 0.83);
+       color: #4D4B4B;
+          border: 1px solid #999999; 
+       border-radius: 10px 10px;
+       -moz-border-radius: 10px 10px;
+       -webkit-border-radius: 10px 10px;
+       box-shadow: 2px 2px 3px #999;
+      -webkit-box-shadow: 2px 2px 3px #999;
+      -moz-box-shadow: 2px 2px 3px #999;
+}
+
+#container_buttons p{
+	display:block;
+	padding-bottom:60px;
+}
+
+.content h3{
+margin-right: 50%;
+}
+.content {
+    border-radius: 13px 13px 13px 13px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#line {
+
+}
+
+#item {
+padding-left: 10px;
+padding-bottom: 7px;
+padding-top: 7px;
+}
+.in-content {
+padding-left: 10px;
+}
+
+#button{
+	/* Кнопка отправки */
+	border:1px solid #f4f4f4;
+	cursor:pointer;
+	height:40px;
+	text-indent:-9999px;
+	text-transform:uppercase;
+	width:110px;
+
+	background:url("img/submit.png") no-repeat center center #d0ecfd;
+
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+
+#submit.active{
+	/* Добавляем прелоадер после нажатия на кнопку */
+	background-image:url("img/preloader.gif");
+}
+
+input:hover,
+input:focus{
+	/* CSS3 эффект свечения */
+	-moz-box-shadow:0 0 8px lightblue;
+	-webkit-box-shadow:0 0 8px lightblue;
+	box-shadow:0 0 8px lightblue;
+}

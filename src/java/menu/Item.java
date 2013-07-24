@@ -129,5 +129,7 @@ public class Item {
         this.setValueOfMarks(this.getValueOfMarks()+1);
         this.setRatingOfItem((double)this.getMarkOfUser()/(double)this.getValueOfMarks());
     }
-
+    public String toString() {
+        return itemTitle + itemDesc + itemCost;
+    }
 }

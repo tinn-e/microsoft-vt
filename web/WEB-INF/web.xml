@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <servlet>
+        <servlet-name>AddPack</servlet-name>
+        <servlet-class>servlet.AddPack</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddItemServlet</servlet-name>
+        <servlet-class>servlet.AddItemServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>servlet.AuthServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>AuthorizationServlet</servlet-name>
-        <servlet-class>servlets.AuthorizationServlet</servlet-class>
+        <servlet-class>servlet.AuthorizationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrintItems</servlet-name>
+        <servlet-class>servlet.PrintItems</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCategory</servlet-name>
+        <servlet-class>servlet.AddCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>printCats</servlet-name>
+        <servlet-class>servlet.printCats</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AuthorizationServlet</servlet-name>
-        <url-pattern>/AuthorizationServlet</url-pattern>
+        <servlet-name>AddPack</servlet-name>
+        <url-pattern>/AddPack</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddItemServlet</servlet-name>
+        <url-pattern>/AddItemServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/AuthServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrintItems</servlet-name>
+        <url-pattern>/PrintItems</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCategory</servlet-name>
+        <url-pattern>/AddCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>printCats</servlet-name>
+        <url-pattern>/printCats</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

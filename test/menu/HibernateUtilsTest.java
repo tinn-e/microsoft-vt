@@ -1,9 +1,6 @@
 package menu;
 
 import java.util.List;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -144,7 +141,7 @@ public class HibernateUtilsTest {
         assertEquals(expResult, result);
     }
     
-    @Test
+        @Test
     public void testAddUser() {
         HibernateUtils instanse = new HibernateUtils();
         User expResult = new User("admin", "000000",1);
