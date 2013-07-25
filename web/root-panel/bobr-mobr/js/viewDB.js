@@ -1,7 +1,7 @@
 function DataBaseUtil(){
     //генерация селекторов для каждой категории
 
-    $.getJSON('http://localhost:8080/microsoft-vt/printCats', function(data){
+    $.getJSON('http://http://команда2.ксст.рф:8080/microsoft-vt/printCats', function(data){
         $.each(data, function(key, val){
             $('<div id=0'+key+'><h3>'+val+'</h3></div>').appendTo("#cat_list")
         });
